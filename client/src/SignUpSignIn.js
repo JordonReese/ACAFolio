@@ -20,7 +20,7 @@ class SignUpSignIn extends Component {
         <Col xs={8} xsOffset={2}>
           {this.props.error && this.renderError()}
           <Tabs defaultActiveKey={1} id="signup-signin-tabs">
-            <Tab eventKey={1} title="Sign Up - Sign Up">
+            <Tab eventKey={1} title="Sign Up">
               <SignUp onSignUp={this.props.onSignUp} />
             </Tab>
             <Tab eventKey={2} title="Sign In">
