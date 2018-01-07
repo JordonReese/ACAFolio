@@ -18,7 +18,7 @@ const TopNavbar = (props) => {
   return (
     <div>
       <div>
-        <input placeholder="Search for..."></input>
+        <input placeholder="Search Users..."></input>
       </div>
       <Navbar inverse collapseOnSelect>
         <Navbar.Collapse>
