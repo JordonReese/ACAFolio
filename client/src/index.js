@@ -12,9 +12,9 @@ window.fetch = function fetch(url, settings) {
   return oldFetch(url, settings);
 };
 
+//CMC comment.  Testing git and Github.
 
 ReactDOM.render(
   <App />,
   document.getElementById("root")
 );
-
