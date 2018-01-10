@@ -17,12 +17,10 @@ const TopNavbar = (props) => {
   }
   return (
     <div>
-      <div>
-        <input placeholder="Search Users..."></input>
-      </div>
       <Navbar inverse collapseOnSelect>
         <Navbar.Collapse>
           <Nav pullRight>
+            <NavItem onClick={props.onSignOut}>Sign Out</NavItem>
           </Nav>
           {navItems}
         </Navbar.Collapse>
@@ -33,8 +31,21 @@ const TopNavbar = (props) => {
 };
 
 TopNavbar.propTypes = {
-  onSignOut: PropTypes.func.isRequired,
-  showNavItems: PropTypes.bool.isRequired
+  onSignOut: PropTypes.func.isRequired
+  // showNavItems: PropTypes.bool.isRequired
 };
 
 export default TopNavbar;
+
+
+// <div>
+//   <input placeholder="Search Users..."></input>
+// </div>
+
+// <button className=""
+//   onClick={(e) => {
+//   e.preventDefault();
+//   if (props.onSignOut) {
+//     props.onSignOut();
+//   }}}
+// > Sign Out </button>

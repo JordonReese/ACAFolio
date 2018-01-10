@@ -10,7 +10,7 @@ class Secret extends Component {
   }
 
   componentDidMount() {
-
+    this.setState({ message: "I tell no lies" });
   }
 
   render() {
