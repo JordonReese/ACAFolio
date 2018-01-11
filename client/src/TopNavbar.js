@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { Navbar, Nav, NavItem, NavDropdown, Button, MenuItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NotificationsContainer from "./containers/NotificationsContainer"
 
 const TopNavbar = (props) => {
   let navItems = "";
@@ -12,7 +13,7 @@ const TopNavbar = (props) => {
                   <Link to="/"><Navbar.Text>Home</Navbar.Text></Link>
                 </Nav>
                 <Nav pullRight>
-                  <Navbar.Text>Notifications</Navbar.Text>
+                  <NotificationsContainer />
                   <Link to="/public"><Navbar.Text>Public View</Navbar.Text></Link>
                 </Nav>
               </div>
@@ -46,17 +47,5 @@ TopNavbar.propTypes = {
 
 export default TopNavbar;
 
-
-// <div>
-//   <input placeholder="Search Users..."></input>
-// </div>
-
-// <button className=""
-//   onClick={(e) => {
-//   e.preventDefault();
-//   if (props.onSignOut) {
-//     props.onSignOut();
-//   }}}
-// > Sign Out </button>
 
 // <Link to="/secret"><Navbar.Text>Secret</Navbar.Text></Link>

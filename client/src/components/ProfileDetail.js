@@ -10,6 +10,7 @@ function ProfileDetail() {
 
   return (
     <div className="ProfileInfo">
+      <h2>Profile Detail</h2>
       <div className="ProfilePicture">
         Image
       </div>
