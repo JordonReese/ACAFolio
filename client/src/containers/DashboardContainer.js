@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ActivityFeed from "../components/ActivityFeed";
+import Dashboard from "../components/Dashboard";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
@@ -14,4 +14,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ActivityFeed);
+export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

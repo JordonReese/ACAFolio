@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./TopNavbar";
-import Secret from "./Secret";
+// import Secret from "./Secret";
+import PersonalView from "./components/PersonalView"
+import PublicView from "./components/PublicView"
 
 class App extends Component {
   constructor() {
@@ -91,9 +93,9 @@ class App extends Component {
 
   renderSignUpSignIn() {
     return (
-      <SignUpSignIn 
-        error={this.state.signUpSignInError} 
-        onSignUp={this.handleSignUp} 
+      <SignUpSignIn
+        error={this.state.signUpSignInError}
+        onSignUp={this.handleSignUp}
         onSignIn={this.handleSignIn}
       />
     );
@@ -103,8 +105,8 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" render={() => <h1>I am protected!</h1>} />
-          <Route exact path="/secret" component={Secret} />
+          <Route exact path="/" render={PersonalView} />
+          <Route exact path="/public" component={PublicView} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>
       </div>
@@ -118,12 +120,12 @@ class App extends Component {
     } else {
       whatToShow = this.renderSignUpSignIn();
     }
-       
+
     return (
       <BrowserRouter>
         <div className="App">
-          <TopNavbar 
-            showNavItems={this.state.authenticated} 
+          <TopNavbar
+            showNavItems={this.state.authenticated}
             onSignOut={this.handleSignOut} />
           {whatToShow}
         </div>
@@ -133,3 +135,5 @@ class App extends Component {
 }
 
 export default App;
+
+// () => <h1>I am protected!</h1>
