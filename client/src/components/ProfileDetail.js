@@ -1,23 +1,17 @@
 /*
-
-Used to show detials on profile
-
+Used to show detials on profile:
 FirstName, LastName, Birthday, UserName, Email, ACAID, Password
-
 */
-
-
 import React from "react";
+import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
-function UserProfile() {
-
-
-
+function ProfileDetail() {
 
   return (
     <div className="ProfileInfo">
-      <div className="ProfilePicture"
-        Img
+      <div className="ProfilePicture">
+        Image
       </div>
       <div className="ProfileDetail">
         FirstName
@@ -51,25 +45,7 @@ function UserProfile() {
       </div>
     </div>
 
-
-
-
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default ProfileDetail;
