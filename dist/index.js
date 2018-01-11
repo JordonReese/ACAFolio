@@ -37,7 +37,7 @@ require("dotenv").config();
 
 _mongoose2.default.set("debug", true);
 _mongoose2.default.Promise = global.Promise;
-_mongoose2.default.connect("mongodb://jwoo:jwoo@ds151451.mlab.com:51451/aca-test");
+_mongoose2.default.connect("mongodb://public:public@ds149763.mlab.com:49763/acafolio");
 
 var app = (0, _express2.default)();
 app.use(_express2.default.static("public"));
