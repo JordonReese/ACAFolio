@@ -35,28 +35,47 @@ flex-wrap: wrap;
 
 /* DashBoard */
 
-.dashTitle {
-  font-size: 25px;
-  text-align: center;
-}
-
 .dashSection{
   border: 1px solid gray;
   height: 150px;
 }
-.preWorkWrap{
+
+.dashboardHeader {
+  font-size: 40px;
+  font-family: 'Times', sans-serif;
+  margin-bottom: 25px;
+}
+
+
+/* PreWorkSection */
+
+.preWorkWrap {
+  text-align: center;
+}
+
+.weeklyFolderWrap {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
+  text-align: center;
 }
 
 .folderImage{
-  height:30px;
-  width: 30px;
-  margin-right: 10px;
+  height:35px;
+  width: 35px;
+  margin: 5px;
 }
 
 .weekLink{
-  margin-left: 3px;
+  padding: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: 'Times', sans-serif;
+}
+
+.weekLink:hover{
+  padding: 5px;
+  text-decoration: none;
 }
 
 .weeklyFolder:hover{
@@ -68,4 +87,34 @@ flex-wrap: wrap;
 .weeklyFolder {
   display: inline-block;
   padding: 5px;
+  justify-content: center;
+}
+
+/* Video Section */
+
+.videoSectionWrap {
+  text-align: center;
+
+}
+
+.weeklyVideoWrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+  text-align: center;
+  max-height: 400px;
+  margin-bottom: 15px;
+  overflow: scroll;
+  overflow-y: scroll;
+}
+
+.videoInfo {
+  margin-top: 3px;
+  line-height: 5px;
+  font-size: 12px;
+}
+
+video{
+  border: 1px solid gray;
 }

@@ -18,10 +18,12 @@ class PreWork extends Component {
 
     return (
       <div className="preWorkWrap">
-
-        <h2>Prework</h2>
-          {folderRender}
+        <h2 className="dashboardHeader">Prework</h2>
+        <div className="weeklyFolderWrap">
+            {folderRender}
+        </div>
       </div>
+
     );
   }
 }

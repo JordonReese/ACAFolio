@@ -8,10 +8,6 @@ function Dashboard(props) {
   return (
     <div>
       <div className="dashSection">
-        <h2 className="dashTitle">Videos</h2>
-        <div>Video details</div>
-      </div>
-      <div className="dashSection">
         <h2 className="dashTitle">Attendance & Grades</h2>
         <div>Attendance & Grades</div>
       </div>

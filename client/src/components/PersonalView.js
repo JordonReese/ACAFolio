@@ -6,7 +6,8 @@ import React from "react";
 import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 import DashboardContainer from "../containers/DashboardContainer";
 import ActivityEntry from "../components/ActivityEntry";
-import PreWork from "../components/PreWork.js";
+import PreWorkSection from "../components/PreWorkSection.js";
+import VideoSection from "../components/VideoSection.js";
 
 function PersonalView() {
   return (
@@ -18,7 +19,8 @@ function PersonalView() {
 
           </div>
           <div className="col-md-6">
-            <PreWork folderImage={'../../public/90376_227958_folder_vector.png'} />
+            <PreWorkSection />
+            <VideoSection />
             <DashboardContainer />
 
           </div>
