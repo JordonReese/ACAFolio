@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 function ActivityFeed(props) {
 
   return (
-    <div>
-      <h2>What's Good?</h2>
+    <div className="activityFeed">
+      <h2>Activity Feed</h2>
       <div>Activity Feed list</div>
     </div>
   );

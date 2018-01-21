@@ -6,3 +6,5 @@
 
 
 * This is our final group project for Austin Coding Academy.
+
+git pull origin master to pull updates from Github.

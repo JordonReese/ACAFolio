@@ -3,3 +3,69 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+/* Create Activity */
+.createActivity{
+/* border: 1px solid red; */
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+}
+
+.activityInput {
+  width: 100%;
+  height: 50px;
+  resize: none;
+  display: block;
+
+}
+
+.activityEntryButton{
+  display: flex;
+  background-color: #F6B141;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+/* Activity Feed */
+
+.activityFeed {
+  /* border: 1px solid blue; */
+}
+
+/* DashBoard */
+
+.dashTitle {
+  font-size: 25px;
+  text-align: center;
+}
+
+.dashSection{
+  border: 1px solid gray;
+  height: 150px;
+}
+.preWorkWrap{
+  justify-content: center;
+  margin: 10px;
+}
+
+.folderImage{
+  height:30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.weekLink{
+  margin-left: 3px;
+}
+
+.weeklyFolder:hover{
+  background-color: #FCDCAC;
+  transform: scale(1.05);
+  border-radius: 5px;
+}
+
+.weeklyFolder {
+  display: inline-block;
+  padding: 5px;
+}
