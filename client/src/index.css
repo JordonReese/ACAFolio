@@ -2,14 +2,24 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: rgba(92, 136, 156, 0.3);
 }
+/* ACTIVITY FEED SECTION */
 
 /* Create Activity */
+
 .createActivity{
-/* border: 1px solid red; */
-width: 100%;
-display: flex;
-flex-wrap: wrap;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-family: times;
+  text-align: center;
+}
+.activitySectionHeader{
+  font-size: 40px;
+  align-self: center;
+  margin-bottom: 25px;
+  text-shadow: 1.5px 1.5px 1.5px gray;
 }
 
 .activityInput {
@@ -17,7 +27,13 @@ flex-wrap: wrap;
   height: 50px;
   resize: none;
   display: block;
-
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+  border: none;
+}
+.activityInput::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 1;
 }
 
 .activityEntryButton{
@@ -25,12 +41,150 @@ flex-wrap: wrap;
   background-color: #F6B141;
   margin-left: auto;
   margin-top: 10px;
+  border-radius: 5px;
+    box-shadow: 3px 3px 3px gray;
 }
 
-/* Activity Feed */
+/* Activity Display */
 
-.activityFeed {
-  /* border: 1px solid blue; */
+.activityFeedWrap {
+  font-family: times;
+  background-color: rgba(92, 136, 156, 0.8);
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+  overflow: scroll;
+  border-radius: 5px;
+}
+
+.activityPost {
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: rgba(255, 220, 173, .9);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+}
+
+.activityName {
+  font-size: 18px;
+  color: #004665;
+  box-sizing: border-box;
+  display: inline-block;
+  margin:5px;
+  margin-left: 15px;
+}
+
+.activityHandle{
+  display: inline-block;
+  margin-left: 5px;
+  color: #004665;
+  font-size: 13px;
+}
+
+.activityMessage {
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.activityDate {
+  margin-left: 5px;
+  margin-top: 15px;
+  margin-left: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #004665;
+}
+
+.activityDelete {
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+  color: darkred;
+}
+.activityEdit{
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.commentText {
+  resize: none;
+  width: 90%;
+  height:25px;
+  margin-left: 5%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px gray;
+}
+.commentSubmit{
+  margin-left:85%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+}
+
+/* Comment Display */
+
+.commentWrap {
+  margin: 0 auto;
+  width:95%;
+  background-color: rgba(92, 136, 156, 0.9);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+    border-radius: 5px;
+}
+.commentPost {
+  margin: 5px;
+  background-color: #CCDBE1;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+}
+.commentUser{
+  font-size: 15px;
+  color: #004665;
+  box-sizing: border-box;
+  display: inline-block;
+  margin:5px;
+  margin-left: 15px;
+}
+.commentHandle{
+  display: inline-block;
+  margin-left: 5px;
+  color: #004665;
+  font-size: 12px;
+}
+.commentMessage {
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.commentDate {
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-left: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #004665;
+}
+
+.activityDelete {
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+  color: darkred;
+}
+.activityEdit{
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
 }
 
 /* DashBoard */
@@ -44,6 +198,7 @@ flex-wrap: wrap;
   font-size: 40px;
   font-family: 'Times', sans-serif;
   margin-bottom: 25px;
+    text-shadow: 1.5px 1.5px 1.5px gray;
 }
 
 
@@ -103,7 +258,7 @@ flex-wrap: wrap;
   justify-content: center;
   justify-content: space-around;
   text-align: center;
-  max-height: 400px;
+  max-height: 215px;
   margin-bottom: 15px;
   overflow: scroll;
   overflow-y: scroll;
