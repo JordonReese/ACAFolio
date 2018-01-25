@@ -6,8 +6,7 @@ import React from "react";
 import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 import DashboardContainer from "../containers/DashboardContainer";
 import ActivityEntry from "../components/ActivityEntry";
-import PreWorkSection from "../components/PreWorkSection.js";
-import VideoSection from "../components/VideoSection.js";
+
 
 function PersonalView() {
   return (
@@ -19,8 +18,6 @@ function PersonalView() {
 
           </div>
           <div className="col-md-6">
-            <PreWorkSection />
-            <VideoSection />
             <DashboardContainer />
 
           </div>

@@ -2,11 +2,17 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
+import PreWorkSection from "../components/PreWorkSection.js";
+import VideoSection from "../components/VideoSection.js";
+import GradeSection from "./GradeSection.js"
 
 function Dashboard(props) {
 
   return (
     <div>
+      <PreWorkSection />
+      <VideoSection />
+      <GradeSection />
       <div className="dashSection">
         <h2 className="dashTitle">Attendance & Grades</h2>
         <div>Attendance & Grades</div>
