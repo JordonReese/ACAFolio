@@ -58,9 +58,9 @@ class VideoSection extends Component {
             <source src={movie.url} />
           </video>
           <div className='videoInfo'>
-            <p>Week: {movie.week}</p>
-            <p>Day: {movie.day}</p>
-            <p>Date: {movie.date}</p>
+            <p><strong>Week:</strong> {movie.week}</p>
+            <p><strong>Day:</strong> {movie.day}</p>
+            <p><strong>Date:</strong> {movie.date}</p>
           </div>
         </div>
       )
