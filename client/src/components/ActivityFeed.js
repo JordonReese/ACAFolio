@@ -4,11 +4,54 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
 function ActivityFeed(props) {
+  console.log("ActivitFeed",props);
+  let mapActivities = props.activityFeed.map(activity => {
+    let comments = activity.comments;
 
+
+
+    const commentsRender = comments.map(comment => {
+      if(comments.length > 0) {
+        return (
+          <div className="commentPost">
+            <a className="commentUser" href="#">{comment.user}</a>
+            <p className="commentHandle">{comment.handle}</p>
+            <p className="commentMessage">{comment.message}</p>
+            <p className="commentDate">{comment.date} at {comment.time}</p>
+            <a className="activityEdit" href="#">edit</a>
+            <a className="activityDelete" href="">delete</a>
+          </div>
+        )
+      } else {
+        return null;
+      }
+    });
+
+    return (
+      <div className="activityPost">
+        <a href='#' className="activityName">{activity.name}</a>
+        <p className="activityHandle">{activity.handle}</p>
+        <h6 className="activityMessage">{activity.message}</h6>
+        <p className="activityDate">{activity.date} at {activity.time}</p>
+        <a className="activityEdit" href="#">edit</a>
+        <a className="activityDelete" href="">delete</a>
+        <textarea className="commentText" placeholder="comment..."></textarea>
+        <button className="commentSubmit" type="sumbit">Submit</button>
+        <div className="commentWrap">
+          {commentsRender}
+        </div>
+      </div>
+    )
+  })
   return (
+<<<<<<< HEAD
     <div>
       <h2>"What's Good?"</h2>
       <div>Activity Feed list</div>
+=======
+    <div className="activityFeed">
+      <div className="activityFeedWrap">{mapActivities}</div>
+>>>>>>> 8434580cd3ef6b652bfb9ed587730df9249d125d
     </div>
   );
 }

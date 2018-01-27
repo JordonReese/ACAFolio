@@ -16,7 +16,7 @@ class SignUp extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onSignUp({
-      username: this.state.username,
+      username: this.state.username.toLowerCase(),
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     });

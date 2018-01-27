@@ -1,5 +1,286 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  background-color: rgba(92, 136, 156, 0.3);
 }
+/* ACTIVITY FEED SECTION */
+
+/* Create Activity */
+
+.createActivity{
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  height:150px;
+  /* font-family: times; */
+  /* text-align: center; */
+}
+.activitySectionHeader{
+  font-size: 35px;
+  align-self: center;
+  margin-bottom: 25px;
+  text-shadow: 1.5px 1.5px 1.5px gray;
+  font-family: 'Josefin Sans';
+}
+
+.activityInput {
+  margin: 0 auto;
+  width: 80%;
+  height: 50px;
+  resize: none;
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px #004665;
+  border: none;
+}
+.activityInput::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.activityEntryButton{
+  display: flex;
+  position:relative;
+  background-color: rgba(255, 220, 173, 1);
+  position: absolute;
+  right: 0;
+  margin-right: 11.5%;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+  justify-content: center;
+}
+
+
+/* Activity Display */
+
+.activityFeedWrap {
+  font-family: times;
+  background-color: rgba(92, 136, 156, 0.8);
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+  overflow: scroll;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px #004665;
+}
+
+.activityPost {
+  margin: 0 auto;
+  width: 90%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: rgba(255, 220, 173, .9);
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1px #004665;
+}
+
+.activityName {
+  font-size: 18px;
+  color: #004665;
+  box-sizing: border-box;
+  display: inline-block;
+  margin:5px;
+  margin-left: 15px;
+}
+
+.activityHandle{
+  display: inline-block;
+  margin-left: 5px;
+  color: #004665;
+  font-size: 13px;
+}
+
+.activityMessage {
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.activityDate {
+  margin-left: 5px;
+  margin-top: 15px;
+  margin-left: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #004665;
+}
+
+.activityDelete {
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+  color: darkred;
+}
+.activityEdit{
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.commentText {
+  resize: none;
+  width: 90%;
+  height:25px;
+  margin-left: 5%;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px gray;
+}
+.commentSubmit{
+  margin-left:85%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+}
+
+/* Comment Display */
+
+.commentWrap {
+  margin: 0 auto;
+  width:95%;
+  background-color: rgba(92, 136, 156, 0.9);
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+    border-radius: 5px;
+}
+.commentPost {
+  margin: 5px;
+  background-color: #CCDBE1;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px black;
+}
+.commentUser{
+  font-size: 15px;
+  color: #004665;
+  box-sizing: border-box;
+  display: inline-block;
+  margin:5px;
+  margin-left: 15px;
+}
+.commentHandle{
+  display: inline-block;
+  margin-left: 5px;
+  color: #004665;
+  font-size: 12px;
+}
+.commentMessage {
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.commentDate {
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-left: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #004665;
+}
+
+.activityDelete {
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+  color: darkred;
+}
+.activityEdit{
+  box-sizing: border-box;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+/* DASHBOARD SECTION */
+
+.dashSection{
+  border: 1px solid gray;
+  height: 150px;
+}
+
+.dashboardHeader {
+  font-size: 40px;
+  font-family: 'Times', sans-serif;
+  margin-bottom: 25px;
+    text-shadow: 1.5px 1.5px 1.5px gray;
+}
+
+
+/* PreWorkSection */
+
+.preWorkWrap {
+  text-align: center;
+}
+
+.weeklyFolderWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.folderImage{
+  height:35px;
+  width: 35px;
+  margin: 5px;
+}
+
+.weekLink{
+  padding: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: 'Times', sans-serif;
+}
+
+.weekLink:hover{
+  padding: 5px;
+  text-decoration: none;
+}
+
+.weeklyFolder:hover{
+  background-color: #FCDCAC;
+  transform: scale(1.05);
+  border-radius: 5px;
+}
+
+.weeklyFolder {
+  display: inline-block;
+  padding: 5px;
+  justify-content: center;
+}
+
+/* Video Section */
+
+.videoSectionWrap {
+  text-align: center;
+
+}
+
+.weeklyVideoWrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+  text-align: center;
+  max-height: 215px;
+  margin-bottom: 15px;
+  overflow: scroll;
+  overflow-y: scroll;
+}
+
+.videoInfo {
+  margin-top: 3px;
+  line-height: 5px;
+  font-size: 12px;
+}
+
+video{
+  border: 1px solid gray;
+}
+
+/* Grades and Attendance */
