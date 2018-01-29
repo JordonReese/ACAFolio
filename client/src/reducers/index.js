@@ -29,8 +29,17 @@ function profile(state = [], action) {
   return state;
 }
 
+
+// Remarks loaded
+function remarks(state = [], action) {
+  if (action.type === "REMARKS_LOADED") {
+   return action.value;
+ }
+  return state;
+}
+
 const rootReducer = combineReducers({
-  activityFeed, notifications, profiles, profile
+  activityFeed, notifications, profiles, profile, remarks
 });
 
 export default rootReducer;

@@ -8,6 +8,8 @@ import passport from "passport";
 import authenticationRoutes from "./routes/AuthenticationRoutes";
 import listRoutes from "./routes/ListRoutes";
 import articleRoutes from "./routes/blog/ArticleRoutes";
+import CommentRoutes from "./routes/CommentRoutes";
+import RemarkRoutes from "./routes/RemarkRoutes";
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
@@ -22,6 +24,7 @@ app.get("*", (req, res, next) => {
 app.use(bodyParser.json());
 app.use(authenticationRoutes);
 
+app.use(RemarkRoutes);
 
 const authStrategy = passport.authenticate("authStrategy", { session: false });
 app.use(authStrategy);

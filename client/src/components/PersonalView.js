@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+
 // import "./App.css";
 // import Main from "./components/Main";
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
@@ -7,23 +8,32 @@ import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 import DashboardContainer from "../containers/DashboardContainer";
 import ActivityEntry from "../components/ActivityEntry";
 
+import RemarksContainer from "../containers/RemarksContainer";
 
-function PersonalView() {
-  return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6">
-            <ActivityEntry />
-            <ActivityFeedContainer />
+class PersonalView extends Component {
+// function PersonalView() {
 
-          </div>
-          <div className="col-md-6">
-            <DashboardContainer />
+  componentDidMount() {
+    this.props.loadRemarks();
+  }
 
+  render() {
+    return (
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-6">
+              <ActivityEntry />
+              <RemarksContainer />
+              <ActivityFeedContainer />
+
+            </div>
+            <div className="col-md-6">
+              <DashboardContainer />
+
+            </div>
           </div>
         </div>
-      </div>
-  );
-
+    );
+  }
 }
 export default (PersonalView);
