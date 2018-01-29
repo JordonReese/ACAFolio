@@ -4,7 +4,8 @@ import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./TopNavbar";
 // import Secret from "./Secret";
-import PersonalView from "./components/PersonalView"
+// import PersonalView from "./components/PersonalView"
+import PersonalViewContainer from "./containers/PersonalViewContainer"
 import PublicView from "./components/PublicView"
 
 class App extends Component {
@@ -105,7 +106,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" render={PersonalView} />
+          <Route path="/" component={PersonalViewContainer} />
           <Route exact path="/public" component={PublicView} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>

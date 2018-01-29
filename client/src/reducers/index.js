@@ -1,11 +1,5 @@
 import {combineReducers} from "redux";
 
-function activityFeed(state = [], action) {
-  if (action.type === "FEED_LOADED") {
-   return action.value;
- }
-  return state;
-}
 
 function notifications(state = [], action) {
   if (action.type === "NOTIF_LOADED") {
@@ -29,8 +23,15 @@ function profile(state = [], action) {
   return state;
 }
 
+function activities(state = [], action) {
+  if(action.type === "ACTIVITIES_LOADED") {
+    return action.value;
+  }
+  return state;
+}
+
 const rootReducer = combineReducers({
-  activityFeed, notifications, profiles, profile
+  activities, notifications, profiles, profile
 });
 
 export default rootReducer;
