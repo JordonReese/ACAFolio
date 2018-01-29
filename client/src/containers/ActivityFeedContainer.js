@@ -3,8 +3,11 @@ import ActivityFeed from "../components/ActivityFeed";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
+
+  //sees state object properly but state is empty.
+
   return {
-    activityFeed: state.activityFeed
+    activities: state.activities
   };
 }
 
