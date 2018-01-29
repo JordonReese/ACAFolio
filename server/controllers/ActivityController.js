@@ -35,8 +35,9 @@ export const create = (request,response) =>{
 
 //Delete Activity
 export const remove = (request, response) => {
-  ActivityModel.remove({_id: request.params.id})
-  .then(activity => {
+  console.log("ControllerFired", request.params.id);
+  ActivityModel.remove({_id:request.params.id})
+  .then(activities => {
     return response.json("Acticvity Deleted");
   });
 }

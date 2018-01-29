@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import ActivityFeed from "../components/ActivityFeed";
+import {deleteActivity} from "../actions";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
@@ -13,7 +14,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    deleteActivity: function(id){
+      console.log("ContainerID:", id);
+      dispatch(deleteActivity(id));
+    }
   };
 }
 

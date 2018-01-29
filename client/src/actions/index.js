@@ -81,3 +81,19 @@ export function createActivity(activity) {
     }).then(() => dispatch(loadActivities()));
   };
 }
+
+//Delete Activity
+
+// not making it through the action.
+export function deleteActivity(id) {
+  return function(dispatch){
+    console.log("hello the action fired")
+    fetch(`/activityfeed/${id}`, {
+      method: "DELETE"
+    }).then(()=> dispatch(loadActivities()));
+    console.log("hello the action completed")
+  }
+
+//Something not right between here...
+//and here...
+};

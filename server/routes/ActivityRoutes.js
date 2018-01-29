@@ -7,8 +7,11 @@ router.get("/activityfeed", list);
 
 router.get("/activityfeed/:id", show);
 
+router.delete("/activityfeed/:id", remove);
+
 router.post("/activityfeed", create);
 
-router.delete("/activityfeed/:id", remove);
+
+
 
 export default router;

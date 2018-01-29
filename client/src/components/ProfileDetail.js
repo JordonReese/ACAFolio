@@ -3,8 +3,8 @@ Used to show detials on profile:
 FirstName, LastName, Birthday, UserName, Email, ACAID, Password
 */
 import React from "react";
-import {Link} from "react-router-dom";
-import PropTypes from "prop-types";
+// import {Link} from "react-router-dom";
+// import PropTypes from "prop-types";
 
 function ProfileDetail() {
 
