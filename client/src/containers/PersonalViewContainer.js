@@ -3,12 +3,12 @@ import PersonalView from "../components/PersonalView";
 import { connect } from "react-redux";
 
 // Activity Feed test
-import { loadRemarks } from "../actions";
+import { loadActivities } from "../actions";
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadRemarks: function () {
-      dispatch(loadRemarks());
+    loadActivities: function (activity) {
+      dispatch(loadActivities(activity));
     }
   };
 }

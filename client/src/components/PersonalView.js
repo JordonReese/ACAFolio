@@ -6,15 +6,14 @@ import React, { Component } from "react";
 // import AddressContainer from "./containers/AddressContainer";
 import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 import DashboardContainer from "../containers/DashboardContainer";
-import ActivityEntry from "../components/ActivityEntry";
+import CreateActivityContainer from "../containers/CreateActivityContainer";
 
 import RemarksContainer from "../containers/RemarksContainer";
 
 class PersonalView extends Component {
-// function PersonalView() {
 
   componentDidMount() {
-    this.props.loadRemarks();
+    this.props.loadActivities();
   }
 
   render() {
@@ -22,8 +21,7 @@ class PersonalView extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
-              <ActivityEntry />
-              <RemarksContainer />
+              <CreateActivityContainer />
               <ActivityFeedContainer />
 
             </div>

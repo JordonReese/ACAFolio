@@ -4,6 +4,10 @@ import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./TopNavbar";
 // import Secret from "./Secret";
+<<<<<<< HEAD
+=======
+// import PersonalView from "./components/PersonalView"
+>>>>>>> d3186928b000dfbd9444d1e2a53753a6d7c5006b
 import PersonalViewContainer from "./containers/PersonalViewContainer"
 import PublicView from "./components/PublicView"
 
