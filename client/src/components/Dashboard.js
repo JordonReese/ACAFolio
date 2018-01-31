@@ -1,7 +1,7 @@
 // Displays ACA classroom information
 import React from "react";
-import {Link} from "react-router-dom";
-import PropTypes from "prop-types";
+// import {Link} from "react-router-dom";
+// import PropTypes from "prop-types";
 import PreWorkSection from "../components/PreWorkSection.js";
 import VideoSection from "../components/VideoSection.js";
 import GradeSection from "./GradeSection.js"

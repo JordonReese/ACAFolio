@@ -7,8 +7,8 @@ import { loadActivities } from "../actions";
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadActivities: function () {
-      dispatch(loadActivities());
+    loadActivities: function (activity) {
+      dispatch(loadActivities(activity));
     }
   };
 }

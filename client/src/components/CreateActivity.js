@@ -15,8 +15,6 @@ class ActivityEntry extends Component {
     }
   }
   render() {
-    console.log(this.props);
-    console.log("post:", this.state);
     return (
       <div className="createActivity">
         <h2 className="activitySectionHeader">Activity Feed</h2>
