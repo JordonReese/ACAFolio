@@ -15,7 +15,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     deleteActivity: function(id){
-      console.log("ContainerID:", id);
       dispatch(deleteActivity(id));
     }
   };
