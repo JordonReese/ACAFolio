@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, Nav, NavItem, NavDropdown, Button, MenuItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import NotificationsContainer from "./containers/NotificationsContainer"
+import NotificationsContainer from "../containers/NotificationsContainer"
 
 const TopNavbar = (props) => {
   let navItems = "";
@@ -26,7 +26,7 @@ const TopNavbar = (props) => {
         <Navbar.Collapse>
           <Nav pullLeft>
             <a className="navbar-brand" href="https://austincodingacademy.com/">
-              <img src="./images/austin-logo-white.svg" alt="Austin Coding Academy Logo" />
+              <img id="navLogo" src="https://austincodingacademy.com/assets/images/austin-logo-white.svg" alt="Austin Coding Academy Logo" />
             </a>
           </Nav>
           <Nav pullRight>
