@@ -9,22 +9,21 @@ class VideoSection extends Component {
         day: "Tues",
         topic: "React",
         date: "00/00/0000",
-        url: "https://youtu.be/b80G51Gvq24"
-
+        url: "https://www.youtube.com/embed/cKhVupvyhKk"
       },
       {
         week: 1,
         day: "Thurs",
         topic: "React",
         date: "00/00/0000",
-        url: "https://youtu.be/qwcuvpJl4UE"
+        url: "https://www.youtube.com/embed/9zOo4JkZgSI"
       },
       {
         week: 2,
         day: "Tues",
         topic: "Redux",
         date: "00/00/0000",
-        url: "https://youtu.be/b80G51Gvq24"
+        url: "https://www.youtube.com/embed/gEj3NbChJx8"
 
       },
       {
@@ -32,31 +31,46 @@ class VideoSection extends Component {
         day: "Thurs",
         topic: "Redux",
         date: "00/00/0000",
-        url: "https://youtu.be/qwcuvpJl4UE"
+        url: "https://www.youtube.com/embed/u3IvvgRcAKY"
       },
       {
         week: 3,
         day: "Tues",
         topic: "MongoDB",
         date: "00/00/0000",
-        url: "https://youtu.be/b80G51Gvq24"
+        url: "https://www.youtube.com/embed/cKhVupvyhKk"
 
       },
       {
         week: 3,
+        day: "Tues",
+        topic: "MongoDB",
+        date: "00/00/0000",
+        url: "https://www.youtube.com/embed/9zOo4JkZgSI"
+
+      },
+      {
+        week: 4,
+        day: "Tues",
+        topic: "MongoDB",
+        date: "00/00/0000",
+        url: "https://www.youtube.com/embed/gEj3NbChJx8"
+
+      },
+      {
+        week: 4,
         day: "Thurs",
         topic: "MongoDB",
         date: "00/00/0000",
-        url: "https://youtu.be/qwcuvpJl4UE"
+        url: "https://www.youtube.com/embed/u3IvvgRcAKY"
       }
     ];
 
     let renderMovies = movieList.map(movie => {
+      console.log(movie.url);
       return (
         <div class="weeklyVideo">
-          <video width='200' height='150' controls>
-            <source src={movie.url} />
-          </video>
+            <iframe width="300" height="200" src={movie.url} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <div className='videoInfo'>
             <p><strong>Week:</strong> {movie.week}</p>
             <p><strong>Day:</strong> {movie.day}</p>
@@ -65,6 +79,7 @@ class VideoSection extends Component {
         </div>
       )
     })
+
     return (
       <div className="videoSectionWrap">
         <h2 className="dashboardHeader">Weekly Videos</h2>
