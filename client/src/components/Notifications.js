@@ -33,7 +33,7 @@ export default Notifications;
 // has to have an ID associated with it
 
 // someone have application rerender so that the activity feed and notifications are updated
-// create a notification when someone creates an event?
+// create a notification when someone creates an event
 // incriment a number in user profile and push that update to the user?
 // set a time on the notifications to update every 1 min
 
@@ -42,3 +42,8 @@ export default Notifications;
 // create timer component which doesn't return anything just calls NotificationsContainer
 // set time at bottom of component
 // call timerComponent in TopNavbar.js
+
+// sending out notification
+// whose it from
+// what's it consist of - post, tag, tagged post
+// who does it go to?

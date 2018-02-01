@@ -44,14 +44,8 @@ function ActivityFeed(props) {
     )
   })
   return (
-<<<<<<< HEAD
-    <div>
-      <h2>"What's Good?"</h2>
-      <div>Activity Feed list</div>
-=======
     <div className="activityFeed">
       <div className="activityFeedWrap">{mapActivities}</div>
->>>>>>> 8434580cd3ef6b652bfb9ed587730df9249d125d
     </div>
   );
 }
