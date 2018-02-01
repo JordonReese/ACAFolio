@@ -8,7 +8,7 @@ function ActivityFeed(props) {
   //props activities exists, but empty...
 
   console.log("ActivityFeed",props);
-  let mapActivities = props.activities.map(activity => {
+  let mapActivities = props.activities.reverse().map(activity => {
     //let comments = activity.comments;
 
 

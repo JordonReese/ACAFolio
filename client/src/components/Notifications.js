@@ -16,7 +16,6 @@ while(true){
         </NavDropdown>
     );
   }
-  setTimeout(1000);
 }
 export default Notifications;
 
