@@ -1,67 +1,61 @@
 // Displays whole activiy feed
-import React from "react";
+import React, { Component } from "react";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 
-function ActivityFeed(props) {
-
+import CommentsContainer from "../containers/CommentsContainer";
+// function ActivityFeed(props) {
+class ActivityFeed extends Component {
   //props activities exists, but empty...
+  constructor(props) {
+    super(props);
+    // this.state = {date: new Date()};
+  }
 
-  console.log("ActivityFeed",props);
-  let mapActivities = props.activities.map(activity => {
-    //let comments = activity.comments;
+  componentDidMount() {
+  }
 
+  componentWillUnmount() {
+  }
 
+  render() {
+    console.log("ActivityFeed",this.props);
+    let mapActivities = this.props.activities.reverse().map(activity => {
+      //let comments = activity.comments;
 
-    // const commentsRender = comments.map(comment => {
-    //   if(comments.length > 0) {
-    //     return (
-    //       <div className="commentPost">
-    //         <a className="commentUser" href="#">{comment.user}</a>
-    //         <p className="commentHandle">{comment.handle}</p>
-    //         <p className="commentMessage">{comment.message}</p>
-    //         <p className="commentDate">{comment.date} at {comment.time}</p>
-    //         <a className="activityEdit" href="#">edit</a>
-    //         <a className="activityDelete" href="">delete</a>
-    //       </div>
-    //     )
-    //   } else {
-    //     return null;
-    //   }
-    // });
-    return (
-      <div className="activityPost">
-        <a href='#' className="activityName">{activity.userId}</a>
-        <p className="activityHandle">{activity.handle}</p>
-          <h6 className="activityMessage">{activity.post}</h6>
-          <p className="activityDate">{activity.dateTime}</p>
-        <a className="activityEdit" href="#">edit</a>
-        <button className="activityDelete" onClick={(e)=>{
-            e.preventDefault();
-            if(props.deleteActivity){
-              console.log("Component activity._id", activity._id);
-              props.deleteActivity(activity._id);
-            }}}
-        >delete</button>
-        <textarea className="commentText" placeholder="comment..."></textarea>
-        <button className="commentSubmit" type="sumbit">Submit</button>
-        <div className="commentWrap">
+      // this.props.populateComments(activity.comments);
+      // console.lsog("activity comments", activity.comments);
+      return (
+        <div className="activityPost">
+          <a href='#' className="activityName">{activity.userHandle}</a>
+            <h6 className="activityMessage">{activity.post}</h6>
+            <p className="activityDate">{activity.dateTime}</p>
+          <a className="activityEdit" href="#">edit</a>
+          <button className="activityDelete" onClick={(e)=>{
+              e.preventDefault();
+              if(this.props.deleteActivity){
+                console.log("Component activity._id", activity._id);
+                this.props.deleteActivity(activity._id);
+              }}}
+          >delete</button>
+        <CommentsContainer
+          activity={activity}
+          actId={activity._id}
+          comments={activity.comments}
+          showComments={true}
+        />
 
         </div>
+      )
+    })
+    return (
+      <div>
+        <div className="activityFeed">
+          <div className="activityFeedWrap">{mapActivities}</div>
+        </div>
       </div>
-    )
-  })
-  return (
-<<<<<<< HEAD
-    <div>
-      <h2>"What's Good?"</h2>
-      <div>Activity Feed list</div>
-=======
-    <div className="activityFeed">
-      <div className="activityFeedWrap">{mapActivities}</div>
->>>>>>> 8434580cd3ef6b652bfb9ed587730df9249d125d
-    </div>
-  );
+    );
+  }  // render
 }
 export default ActivityFeed;
 
@@ -94,3 +88,11 @@ export default ActivityFeed;
 //   </div>
 //   )
 // });
+
+// <h2>"What's Good?"</h2>
+// <div>Activity Feed list</div>
+
+// <textarea className="commentText" placeholder="comment..."></textarea>
+// <button className="commentSubmit" type="sumbit">Submit</button>
+// <div className="commentWrap">
+// </div>

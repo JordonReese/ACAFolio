@@ -9,6 +9,7 @@ import authenticationRoutes from "./routes/AuthenticationRoutes";
 import listRoutes from "./routes/ListRoutes";
 import articleRoutes from "./routes/blog/ArticleRoutes";
 import ActivityRoutes from "./routes/ActivityRoutes.js";
+import CommentRoutes from "./routes/CommentRoutes.js";
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
@@ -26,13 +27,13 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(authenticationRoutes);
 
-app.use(RemarkRoutes);
 
 const authStrategy = passport.authenticate("authStrategy", { session: false });
 app.use(authStrategy);
 app.use(listRoutes);
 app.use(articleRoutes);
 app.use(ActivityRoutes);
+app.use(CommentRoutes);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

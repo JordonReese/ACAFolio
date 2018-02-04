@@ -2,15 +2,19 @@ import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
   activityId: {
-   required: true,
+   required: false,
    type: String
   },
   userId: {
-   required: true,
+   required: false,
    type: String
   },
-  comment: {
-   required: true,
+  userName: {
+    required: false,
+    type: String
+  },
+  text: {
+   required: false,
    type: String
   },
   dateTime: {

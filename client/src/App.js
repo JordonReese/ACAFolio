@@ -4,10 +4,7 @@ import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./TopNavbar";
 // import Secret from "./Secret";
-<<<<<<< HEAD
-=======
 // import PersonalView from "./components/PersonalView"
->>>>>>> d3186928b000dfbd9444d1e2a53753a6d7c5006b
 import PersonalViewContainer from "./containers/PersonalViewContainer"
 import PublicView from "./components/PublicView"
 
@@ -109,8 +106,8 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/" component={PersonalViewContainer} />
           <Route exact path="/public" component={PublicView} />
+          <Route path="/" component={PersonalViewContainer} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>
       </div>
@@ -141,5 +138,3 @@ class App extends Component {
 export default App;
 
 // () => <h1>I am protected!</h1>
-
-// <Route exact path="/" render={PersonalView} />
