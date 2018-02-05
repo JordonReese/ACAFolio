@@ -34,7 +34,8 @@ function create(request, response) {
     Birthday: request.body.birthday,
     UserName: request.body.userName,
     Password: request.body.password,
-    ACAID: request.body.acaid
+    ACAID: request.body.acaid,
+    Notifications: []
   });
   contact.save().then(function (user) {
     return response.json(user);

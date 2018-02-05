@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
-import TopNavbar from "./TopNavbar";
+import TopNavbar from "./components/TopNavbar";
 // import Secret from "./Secret";
 // import PersonalView from "./components/PersonalView"
 import PersonalViewContainer from "./containers/PersonalViewContainer"

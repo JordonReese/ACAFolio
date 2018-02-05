@@ -28,6 +28,10 @@ var _ArticleRoutes = require("./routes/blog/ArticleRoutes");
 
 var _ArticleRoutes2 = _interopRequireDefault(_ArticleRoutes);
 
+var _ActivityRoutes = require("./routes/ActivityRoutes.js");
+
+var _ActivityRoutes2 = _interopRequireDefault(_ActivityRoutes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // dotenv allows us to declare environment variables in a .env file, \
@@ -41,10 +45,13 @@ _mongoose2.default.connect("mongodb://public:public@ds149763.mlab.com:49763/acaf
 
 var app = (0, _express2.default)();
 app.use(_express2.default.static("public"));
-
-app.get("*", function (req, res, next) {
-  res.sendFile("public/index.html");
-});
+//
+// app.get('*', function (req, res) {
+//   res.sendFile("index.html", { root: path.join(__dirname, 'public') })
+// })
+// app.get("*", (req, res, next) => {
+//   res.sendFile("public/index.html");
+// });
 app.use(_bodyParser2.default.json());
 app.use(_AuthenticationRoutes2.default);
 
@@ -52,6 +59,7 @@ var authStrategy = _passport2.default.authenticate("authStrategy", { session: fa
 app.use(authStrategy);
 app.use(_ListRoutes2.default);
 app.use(_ArticleRoutes2.default);
+app.use(_ActivityRoutes2.default);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

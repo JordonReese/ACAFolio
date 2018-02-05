@@ -4,15 +4,43 @@ body {
   /* font-family: sans-serif; */
   background-color: rgba(92, 136, 156, 0.3);
 }
+
+/* NAV BAR SECTION */
+
+#navLogo{
+  height: 80px;
+}
+.navbar-brand{
+  margin: 0px;
+  padding-top: 10px;
+  padding: 0px;
+}
+.container{
+  margin: 0px;
+  position: relative;
+  width: 100%;
+  background-color: #004665;
+}
+.navbar-inverse .navbar-text {
+  color: #FFDCAD;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFDCAD;
+}
+
+
 /* ACTIVITY FEED SECTION */
 
 /* Create Activity */
 
 .createActivity{
   width: 100%;
+  margin-top: 35px;
   flex-wrap: wrap;
   margin-bottom: 15px;
-  height:150px;
+  height:100px;
+  box-sizing: border-box;
   /* font-family: times; */
   /* text-align: center; */
 }
@@ -57,13 +85,23 @@ body {
 
 .activityFeedWrap {
   font-family: times;
-  background-color: rgba(92, 136, 156, 0.8);
   display: flex;
   flex-direction: column;
-  max-height: 700px;
   overflow: scroll;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px 1px #004665;
+  background-color: rgba(92, 136, 156, 0.2);
+  box-shadow: 0px 0px 10px 1px rgba(92, 136, 156, 0.5);
+  overflow-x: hidden;
+  overflow-y:scroll;
+  width: 90%;
+  height: 900px;
+  margin-left: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+    padding: 0px;
 }
 
 .activityPost {
@@ -71,13 +109,14 @@ body {
   width: 90%;
   margin-bottom: 10px;
   margin-top: 10px;
-  background-color: rgba(255, 220, 173, .9);
+  background-color: rgba(255, 220, 173, .75);
   border-radius: 5px;
   box-shadow: 0px 0px 2px 1px #004665;
 }
 
 .activityName {
   font-size: 18px;
+  font-weight: bolder;
   color: #004665;
   box-sizing: border-box;
   display: inline-block;
@@ -113,6 +152,11 @@ body {
   font-size: 15px;
   color: darkred;
 }
+
+.activityDelete:hover {
+  cursor: pointer;
+}
+
 .activityEdit{
   box-sizing: border-box;
   margin-left: 15px;
@@ -141,13 +185,13 @@ body {
   margin: 0 auto;
   width:95%;
   background-color: rgba(92, 136, 156, 0.9);
-  margin-bottom: 15px;
+  margin-bottom: 3px;
   display: flex;
   flex-direction: column;
   max-height: 300px;
   overflow: scroll;
   overflow-x: hidden;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 .commentPost {
   margin: 5px;
@@ -204,17 +248,35 @@ body {
 }
 
 .dashboardHeader {
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Times', sans-serif;
-  margin-bottom: 25px;
-    text-shadow: 1.5px 1.5px 1.5px gray;
+  margin-bottom: 20px;
+  text-shadow: 1.5px 1.5px 1.5px gray;
 }
 
 
 /* PreWorkSection */
 
+.segmentTagWrap{
+  margin: 5px;
+  display: flex;
+}
+
+.segmentTag {
+  margin:15px;
+  font-size: 17px;
+  border-bottom: 1px solid #004665;
+  height: 20px;
+  font-family: "Times";
+}
+.segmentTag:hover {
+  transform: scale(1.2);
+}
+
 .preWorkWrap {
   text-align: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .weeklyFolderWrap {
@@ -222,36 +284,42 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .folderImage{
   height:35px;
   width: 35px;
-  margin: 5px;
+  margin-left: 20%;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .weekLink{
-  padding: 5px;
-  font-size: 16px;
+  font-size: 17px;
   text-decoration: none;
   font-family: 'Times', sans-serif;
+  line-height: 0px;
 }
 
 .weekLink:hover{
-  padding: 5px;
   text-decoration: none;
+  line-height: 0px;
 }
 
 .weeklyFolder:hover{
-  background-color: #FCDCAC;
+  background-color: rgba(255, 220, 173, .5);
   transform: scale(1.05);
   border-radius: 5px;
 }
 
 .weeklyFolder {
   display: inline-block;
-  padding: 5px;
   justify-content: center;
+  text-align: center;
+  padding: 5px;
+  margin: 0 auto;
 }
 
 /* Video Section */
@@ -267,16 +335,18 @@ body {
   justify-content: center;
   justify-content: space-around;
   text-align: center;
-  max-height: 215px;
+  max-height: 510px;
   margin-bottom: 15px;
   overflow: scroll;
   overflow-y: scroll;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .videoInfo {
   margin-top: 3px;
-  line-height: 5px;
-  font-size: 12px;
+  line-height: 7px;
+  font-size: 15px;
 }
 
 video{

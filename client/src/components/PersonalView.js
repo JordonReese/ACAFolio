@@ -41,6 +41,7 @@ class PersonalView extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
+              <div>{this.props.date}</div>
               <CreateActivityContainer />
               <ActivityFeedContainer />
             </div>

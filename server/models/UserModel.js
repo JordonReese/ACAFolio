@@ -11,6 +11,11 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+
+  Notifications: {
+    type: Array,
+    required: false
   }
 });
 

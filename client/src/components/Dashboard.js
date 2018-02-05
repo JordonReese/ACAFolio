@@ -12,17 +12,17 @@ function Dashboard(props) {
     <div>
       <PreWorkSection />
       <VideoSection />
-      <GradeSection />
-      <div className="dashSection">
-        <h2 className="dashTitle">Attendance & Grades</h2>
-        <div>Attendance & Grades</div>
-      </div>
-      <div className="dashSection">
-        <h2 className="dashTitle">Classroom</h2>
-        <div>Classroom details</div>
-      </div>
+
     </div>
   );
 
 }
 export default Dashboard;
+
+// <div className="dashSection">
+//   <h2 className="dashTitle">Attendance & Grades</h2>
+//   <div>Attendance & Grades</div>
+// </div>
+// <div className="dashSection">
+//   <h2 className="dashTitle">Classroom</h2>
+//   <div>Classroom details</div>
