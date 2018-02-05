@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ActivityFeed from "../components/ActivityFeed";
-import {deleteActivity} from "../actions";
+
+import { deleteActivity, populateComments } from "../actions";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
@@ -16,6 +17,9 @@ function mapDispatchToProps(dispatch) {
   return {
     deleteActivity: function(id){
       dispatch(deleteActivity(id));
+    },
+    populateComments: function(comments) {
+      dispatch(populateComments(comments));
     }
   };
 }

@@ -5,6 +5,10 @@ const schema = new mongoose.Schema({
     type: String,
     required: false
   },
+  userHandle: {
+    type: String,
+    required: false
+  },
   post: {
     type: String,
     required: false
@@ -19,6 +23,14 @@ const schema = new mongoose.Schema({
   },
   likesCount: {
     type: String,
+    required: false
+  },
+  comments: {
+    type: Array,
+    required: false
+  },
+  showComments: {
+    type: Boolean,
     required: false
   }
 });

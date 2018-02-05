@@ -16,10 +16,10 @@ while(true){
         </NavDropdown>
     );
   }
+  // setTimeout(1000);
 }
+
 export default Notifications;
-
-
 
 // Name of poster
 // time of posting

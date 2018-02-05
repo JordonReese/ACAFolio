@@ -27,11 +27,23 @@ export const create = (request,response) =>{
   });
 }
 
+// Put Activity.  This will update the activity.
+export const update = (request,response) =>{
+  // const activity= new ActivityModel(request.body);
+  ActivityModel.update({ _id:request.params.id }, request.body)
+  .then(result => {
+    return response.json(result);
+  });
+}
 
-//Put Activity
-// export const update = (request, response) => {
-//   ActivityModel.findById(request.params.id)
-// }
+// Put Activity.  This will update the activity.
+export const updateComments = (request,response) =>{
+  // const activity= new ActivityModel(request.body);
+  ActivityModel.update({ _id:request.params.id }, { comments: request.body } )
+  .then(result => {
+    return response.json(result);
+  });
+}
 
 //Delete Activity
 export const remove = (request, response) => {

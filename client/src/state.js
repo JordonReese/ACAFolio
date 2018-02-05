@@ -1,6 +1,12 @@
 export default {
   activities: [],
-  notifications: []
+  notifications: [],
+  comments: [],
+  actComments: [],
+  appDate: new Date(),
+  actId: null,
+  showComments: false,
+  currentUser: {}
 };
 
 // Data not getting from database to state.  All are empty, headed to reducers.
