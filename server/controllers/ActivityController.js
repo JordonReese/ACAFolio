@@ -34,6 +34,7 @@ export const update = (request,response) =>{
     if(err) return handleError(err);
     console.log("raw response", raw);
   })
+}
 
 // Put Activity.  This will update the activity.
 export const updateComments = (request,response) =>{
