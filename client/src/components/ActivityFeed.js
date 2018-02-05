@@ -1,5 +1,6 @@
 // Displays whole activiy feed
 import React, {Component} from "react";
+import CommentsContainer from "../containers/CommentsContainer";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 
@@ -35,10 +36,12 @@ class ActivityFeed extends Component {
                   }
                 }}>
               delete</a>
-              <textarea className="commentText" placeHolder="comment..."></textarea>
-              <button className="commentSubmit" type="submit">Submit</button>
-              <div className="commentWrap">
-              </div>
+              <CommentsContainer
+                activity={activity}
+                actId={activity._id}
+                comments={activity.comments}
+                showComments={true}
+               />
             </div>
           )
         }
@@ -70,10 +73,12 @@ class ActivityFeed extends Component {
                   }
                 }}>
               delete</a>
-              <textarea className="commentText" placeHolder="comment..."></textarea>
-              <button className="commentSubmit" type="submit">Submit</button>
-              <div className="commentWrap">
-              </div>
+              <CommentsContainer
+                activity={activity}
+                actId={activity._id}
+                comments={activity.comments}
+                showComments={true}
+               />
             </div>
         )}
       }

@@ -92,14 +92,31 @@ export function deleteActivity(id) {
   }
 }
 
-export function updateActivity(id, post) {
-  // console.log(id, post);
-  return function(dispatch) {
-    fetch(`/activityfeed/${id}`, {
+/* COMMENTS ACTIONS */
+
+// updating the comments
+
+export function updateActivity(actId, activity) {
+  console.log("updateActivity", activity);
+  return function (dispatch) {
+    fetch(`/activityfeed/${actId}`, {
       method: "PUT",
       headers: {"Accept": "application/json",
                 "Content-Type": "application/json"},
-      body: JSON.stringify(post)
-    }).then(()=> dispatch(loadActivities()));
-  }
+      body: JSON.stringify(activity)
+    }).then(() => dispatch(loadActivities()));
+  };
 }
+
+export function updateComments(actId, arrComments) {
+  // console.log("updateComments", actId, arrComments);
+  return function (dispatch) {
+    fetch(`/updatecomments/${actId}`, {
+      method: "put",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(arrComments)
+    }).then(() => dispatch(loadActivities()));
+  };
+}
+

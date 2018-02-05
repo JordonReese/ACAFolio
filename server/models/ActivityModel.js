@@ -24,6 +24,14 @@ const schema = new mongoose.Schema({
   likesCount: {
     type: String,
     required: false
+  },
+  comments: {
+    type: Array,
+    required: false
+  },
+  showComments: {
+    type: Boolean,
+    required: false
   }
 });
 

@@ -106,8 +106,8 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/" component={PersonalViewContainer} />
           <Route exact path="/public" component={PublicView} />
+          <Route path="/" component={PersonalViewContainer} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>
       </div>

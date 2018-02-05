@@ -10,7 +10,6 @@ function ProfileDetail() {
 
   return (
     <div className="ProfileInfo">
-      <h2>Profile Detail</h2>
       <div className="ProfilePicture">
         Image
       </div>
@@ -42,7 +41,7 @@ function ProfileDetail() {
         Aca id
       </div>
       <div className="ProfileDetail">
-        Attended
+        Attendedcampus
       </div>
     </div>
 

@@ -27,14 +27,18 @@ export const create = (request,response) =>{
   });
 }
 
-
-//Edit Activity
+// Put Activity.  This will update the activity.
 export const update = (request,response) =>{
   // const activity= new ActivityModel(request.body);
   ActivityModel.update({_id:request.params.id},{post:request.body}, function(err, raw) {
     if(err) return handleError(err);
     console.log("raw response", raw);
   })
+
+// Put Activity.  This will update the activity.
+export const updateComments = (request,response) =>{
+  // const activity= new ActivityModel(request.body);
+  ActivityModel.update({ _id:request.params.id }, { comments: request.body } )
   .then(result => {
     return response.json(result);
   });
