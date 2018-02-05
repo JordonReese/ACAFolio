@@ -66,11 +66,10 @@ class VideoSection extends Component {
       }
     ];
 
-    let renderMovies = movieList.map(movie => {
-      console.log(movie.url);
+    let renderMovies = movieList.map((movie, key) => {
       return (
-        <div class="weeklyVideo">
-            <iframe width="300" height="200" src={movie.url} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div key ={key} className="weeklyVideo">
+            <iframe width="250" height="150" src={movie.url} frameBorder="0"  allowFullScreen></iframe>
           <div className='videoInfo'>
             <p><strong>Week:</strong> {movie.week}</p>
             <p><strong>Day:</strong> {movie.day}</p>

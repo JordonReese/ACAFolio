@@ -1,61 +1,97 @@
 // Displays whole activiy feed
-import React, { Component } from "react";
+import React, {Component} from "react";
+import CommentsContainer from "../containers/CommentsContainer";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 
-import CommentsContainer from "../containers/CommentsContainer";
-// function ActivityFeed(props) {
 class ActivityFeed extends Component {
-  //props activities exists, but empty...
-  constructor(props) {
+  constructor(props){
     super(props);
-    // this.state = {date: new Date()};
+    this.state = {
+      editPost: false,
+      post: ""
+    }
   }
+  //props activities exists, but empty...
+  render(){
 
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
-  }
-
-  render() {
-    console.log("ActivityFeed",this.props);
-    let mapActivities = this.props.activities.reverse().map(activity => {
+    let mapActivities = this.props.activities.map((activity, key) => {
       //let comments = activity.comments;
-
-      // this.props.populateComments(activity.comments);
-      // console.lsog("activity comments", activity.comments);
+      let activityBody;
+      if(this.state.editPost === false){
+        activityBody = () => {
+          return (
+            <div key={key} className="activityPost">
+              <a href='#' className="activityName">{activity.userHandle}</a>
+              <h6 className="activityMessage">{activity.post}</h6>
+              <p className="activityDate">{activity.dateTime}</p>
+              <a className="activityEdit" onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({editPost: true});
+                }}>edit</a>
+              <a className="activityDelete" onClick={(e)=>{
+                  e.preventDefault();
+                  if(this.props.deleteActivity){
+                    this.props.deleteActivity(activity._id);
+                  }
+                }}>
+              delete</a>
+              <CommentsContainer
+                activity={activity}
+                actId={activity._id}
+                comments={activity.comments}
+                showComments={true}
+               />
+            </div>
+          )
+        }
+      } else{
+        activityBody = () => {
+          return (
+            <div key={key} className="activityPost">
+              <a href='#' className="activityName">{activity.userHandle}</a>
+                <textarea className="editPostArea" defaultValue={activity.post} onChange={(e)=> {
+                 e.preventDefault();
+                 this.setState({post: e.target.value});
+               }}></textarea>
+               <button className="editEntryButton" type='sumbit' onClick={(e)=> {
+                 e.preventDefault();
+                 this.props.updateActivity(activity._id, this.state.post);
+                 this.setState({editPost: false, post:""});
+                 }
+               }
+               >Submit</button>
+              <p className="activityDate">{activity.dateTime}</p>
+              <a className="activityEdit" onClick={(e) => {
+                  e.preventDefault();
+                  this.setState({editPost: true});
+                }}>edit</a>
+              <a className="activityDelete" onClick={(e)=>{
+                  e.preventDefault();
+                  if(this.props.deleteActivity){
+                    this.props.deleteActivity(activity._id);
+                  }
+                }}>
+              delete</a>
+              <CommentsContainer
+                activity={activity}
+                actId={activity._id}
+                comments={activity.comments}
+                showComments={true}
+               />
+            </div>
+        )}
+      }
       return (
-        <div className="activityPost">
-          <a href='#' className="activityName">{activity.userHandle}</a>
-            <h6 className="activityMessage">{activity.post}</h6>
-            <p className="activityDate">{activity.dateTime}</p>
-          <a className="activityEdit" href="#">edit</a>
-          <button className="activityDelete" onClick={(e)=>{
-              e.preventDefault();
-              if(this.props.deleteActivity){
-                console.log("Component activity._id", activity._id);
-                this.props.deleteActivity(activity._id);
-              }}}
-          >delete</button>
-        <CommentsContainer
-          activity={activity}
-          actId={activity._id}
-          comments={activity.comments}
-          showComments={true}
-        />
-
-        </div>
+          activityBody()
       )
-    })
+    }).reverse()
     return (
-      <div>
-        <div className="activityFeed">
-          <div className="activityFeedWrap">{mapActivities}</div>
-        </div>
+      <div className="activityFeed">
+        <div className="activityFeedWrap">{mapActivities}</div>
       </div>
     );
-  }  // render
+  }
 }
 export default ActivityFeed;
 
