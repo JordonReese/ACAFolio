@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ActivityFeed from "../components/ActivityFeed";
-import {deleteActivity} from "../actions";
+import {deleteActivity, updateActivity} from "../actions";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
@@ -16,8 +16,13 @@ function mapDispatchToProps(dispatch) {
   return {
     deleteActivity: function(id){
       dispatch(deleteActivity(id));
+    },
+    updateActivity: function(id, post) {
+      dispatch(updateActivity(id, post));
     }
-  };
+  }
 }
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(ActivityFeed);

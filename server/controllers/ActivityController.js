@@ -28,10 +28,17 @@ export const create = (request,response) =>{
 }
 
 
-//Put Activity
-// export const update = (request, response) => {
-//   ActivityModel.findById(request.params.id)
-// }
+//Edit Activity
+export const update = (request,response) =>{
+  // const activity= new ActivityModel(request.body);
+  ActivityModel.update({_id:request.params.id},{post:request.body}, function(err, raw) {
+    if(err) return handleError(err);
+    console.log("raw response", raw);
+  })
+  .then(result => {
+    return response.json(result);
+  });
+}
 
 //Delete Activity
 export const remove = (request, response) => {

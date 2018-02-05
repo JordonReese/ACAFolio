@@ -97,10 +97,9 @@ body {
   height: 900px;
   margin-left: 5%;
 }
-
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+   background:transparent; /* optional: just make scrollbar invisible */
     padding: 0px;
 }
 
@@ -162,7 +161,9 @@ body {
   margin-left: 15px;
   font-size: 15px;
 }
-
+.activityEdit:hover {
+  cursor: pointer;
+}
 .commentText {
   resize: none;
   width: 90%;
@@ -177,6 +178,23 @@ body {
   margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 3px 3px 3px gray;
+}
+
+.editPostArea{
+  width:80%;
+  position: relative;
+  display: block;
+  top: 5px;
+  left: 10%;
+  resize: none;
+}
+.editEntryButton {
+  box-shadow: 3px 3px 3px gray;
+  position: relative;
+  display: block;
+  top: 10px;
+  left: 80%;
+  border-radius: 5px;
 }
 
 /* Comment Display */
@@ -238,6 +256,7 @@ body {
   box-sizing: border-box;
   margin-left: 15px;
   font-size: 15px;
+
 }
 
 /* DASHBOARD SECTION */
@@ -265,12 +284,17 @@ body {
 .segmentTag {
   margin:15px;
   font-size: 17px;
-  border-bottom: 1px solid #004665;
-  height: 20px;
+  width: 100px;
+  height: 25px;
   font-family: "Times";
+  text-decoration: none;
+  text-transform: capitalize;
 }
 .segmentTag:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  border-bottom: 1px solid #004665;
 }
 
 .preWorkWrap {
@@ -335,7 +359,7 @@ body {
   justify-content: center;
   justify-content: space-around;
   text-align: center;
-  max-height: 510px;
+  max-height: 438px;
   margin-bottom: 15px;
   overflow: scroll;
   overflow-y: scroll;

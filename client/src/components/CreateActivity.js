@@ -7,7 +7,7 @@ class ActivityEntry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: "Cameron Gottschall",
+      userHandle: "Cam G",
       post:"",
       dateTime: '',
       location:"Austin",
