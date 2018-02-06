@@ -97,7 +97,6 @@ export function deleteActivity(id) {
 // updating the comments
 
 export function updateActivity(actId, activity) {
-  console.log("updateActivity", activity);
   return function (dispatch) {
     fetch(`/activityfeed/${actId}`, {
       method: "PUT",
@@ -119,4 +118,3 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
-

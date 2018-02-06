@@ -8,7 +8,7 @@ class ActivityFeed extends Component {
   constructor(props){
     super(props);
     this.state = {
-      editPost: false,
+      editKey: -1,
       post: ""
     }
   }
@@ -18,7 +18,7 @@ class ActivityFeed extends Component {
     let mapActivities = this.props.activities.map((activity, key) => {
       //let comments = activity.comments;
       let activityBody;
-      if(this.state.editPost === false){
+      if(this.state.editKey !== key){
         activityBody = () => {
           return (
             <div key={key} className="activityPost">
@@ -27,7 +27,7 @@ class ActivityFeed extends Component {
               <p className="activityDate">{activity.dateTime}</p>
               <a className="activityEdit" onClick={(e) => {
                   e.preventDefault();
-                  this.setState({editPost: true});
+                  this.setState({editKey: key });
                 }}>edit</a>
               <a className="activityDelete" onClick={(e)=>{
                   e.preventDefault();
@@ -56,8 +56,9 @@ class ActivityFeed extends Component {
                }}></textarea>
                <button className="editEntryButton" type='sumbit' onClick={(e)=> {
                  e.preventDefault();
-                 this.props.updateActivity(activity._id, this.state.post);
-                 this.setState({editPost: false, post:""});
+                 activity.post = this.state.post;
+                 this.props.updateActivity(activity._id, {"post":this.state.post});
+                 this.setState({editKey: -1, post:""});
                  }
                }
                >Submit</button>
@@ -73,6 +74,7 @@ class ActivityFeed extends Component {
                   }
                 }}>
               delete</a>
+
               <CommentsContainer
                 activity={activity}
                 actId={activity._id}
