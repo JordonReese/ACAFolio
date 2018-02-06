@@ -29,11 +29,10 @@ export const create = (request,response) =>{
 
 // Put Activity.  This will update the activity.
 export const update = (request,response) =>{
-  // const activity= new ActivityModel(request.body);
-  ActivityModel.update({_id:request.params.id},{post:request.body}, function(err, raw) {
+  ActivityModel.update({ _id:request.params.id }, request.body, function(err, raw) {
     if(err) return handleError(err);
     console.log("raw response", raw);
-  })
+  });
 }
 
 // Put Activity.  This will update the activity.

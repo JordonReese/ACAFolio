@@ -10,7 +10,7 @@ function PublicView() {
   return (
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-6">
             <ActivityFeedContainer meOnly="true"/>
           </div>
           <div className="col-md-6">

@@ -27,7 +27,6 @@ class ActivityEntry extends Component {
         />
         <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
             e.preventDefault();
-            this.setState({dateTime: "hello" });
             this.props.createActivity(this.state);
             this.setState({post:""});
             }
