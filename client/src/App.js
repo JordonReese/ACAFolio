@@ -3,10 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./components/TopNavbar";
-// import Secret from "./Secret";
-// import PersonalView from "./components/PersonalView"
-import PersonalViewContainer from "./containers/PersonalViewContainer"
-import PublicView from "./components/PublicView"
+import PersonalViewContainer from "./containers/PersonalViewContainer";
+import PublicViewContainer from "./containers/PublicViewContainer";
 
 class App extends Component {
   constructor() {
@@ -106,8 +104,8 @@ class App extends Component {
     return (
       <div>
         <Switch>
+          <Route path="/public" component={PublicViewContainer} />
           <Route path="/" component={PersonalViewContainer} />
-          <Route exact path="/public" component={PublicView} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>
       </div>

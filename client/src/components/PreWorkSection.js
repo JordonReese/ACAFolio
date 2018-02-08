@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Tabs, Tab} from "react-materialize";
 
 class PreWork extends Component {
   // constructor(props){

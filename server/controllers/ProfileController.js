@@ -1,41 +1,44 @@
-import UserModel from "../models/UserModel";
+import ProfileModel from "../models/ProfileModel";
 
+//List Profile
 export function list(request, response) {
-  UserModel.find({}).exec()
-  .then(user => {
-    return response.json(user);
+  ProfileModel.find({}).exec()
+  .then(Profile => {
+    return response.json(Profile);
   });
 }
 
+//Show Profile
 export function show(request, response)
 {
-   UserModel.findById(request.params.id).exec()
-   .then(user => {
-     return response.json(user);
+   ProfileModel.findById(request.params.id).exec()
+   .then(Profile => {
+     return response.json(Profile);
    });
 }
 
+//Create Profile
 export function create(request, response) {
-   const contact = new UserModel({
-     FirstName:request.body.firstName,
-     LastName:request.body.lastName,
-     Email:request.body.email,
-     Birthday:request.body.birthday,
-     UserName:request.body.userName,
-     Password:request.body.password,
-     ACAID:request.body.acaid,
+   const contact = new ProfileModel({
+     smhandle:request.body.smhandle,
+     firstName:request.body.firstName,
+     lastName:request.body.lastName,
+     email:request.body.email,
+     birthday:request.body.birthday,
+     cityState:request.body.cityState,
+     bio:request.body.bio,
      Notifications: []
    });
    contact.save()
-   .then(user => {
-     return response.json(user);
+   .then(Profile => {
+     return response.json(Profile);
    });
 }
 
-
+//Remove Profile
 export function remove(request, response) {
-  UserModel.remove({_id: request.params.id})
-  .then(users => {
-    return response.send("You have deleted a user.");
+  ProfileModel.remove({_id: request.params.id})
+  .then(Profiles => {
+    return response.send("You have deleted a Profile.");
   });
 }

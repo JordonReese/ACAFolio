@@ -9,6 +9,8 @@ import authenticationRoutes from "./routes/AuthenticationRoutes";
 import listRoutes from "./routes/ListRoutes";
 import articleRoutes from "./routes/blog/ArticleRoutes";
 import ActivityRoutes from "./routes/ActivityRoutes.js";
+import ProfileRoutes from "./routes/ProfileRoutes.js";
+
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;

@@ -38,6 +38,6 @@ export const remove = (request, response) => {
   console.log("ControllerFired", request.params.id);
   ActivityModel.remove({_id:request.params.id})
   .then(activities => {
-    return response.json("Acticvity Deleted");
+    return response.json("Activity Deleted");
   });
 }
