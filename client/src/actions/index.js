@@ -84,16 +84,37 @@ export function createActivity(activity) {
 
 //Delete Activity
 
-// not making it through the action.
 export function deleteActivity(id) {
   return function(dispatch){
-    console.log("hello the action fired")
     fetch(`/activityfeed/${id}`, {
       method: "DELETE"
     }).then(()=> dispatch(loadActivities()));
-    console.log("hello the action completed")
   }
+}
 
-//Something not right between here...
-//and here...
-};
+/* COMMENTS ACTIONS */
+
+// updating the comments
+
+export function updateActivity(actId, activity) {
+  return function (dispatch) {
+    fetch(`/activityfeed/${actId}`, {
+      method: "PUT",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(activity)
+    }).then(() => dispatch(loadActivities()));
+  };
+}
+
+export function updateComments(actId, arrComments) {
+  // console.log("updateComments", actId, arrComments);
+  return function (dispatch) {
+    fetch(`/updatecomments/${actId}`, {
+      method: "put",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(arrComments)
+    }).then(() => dispatch(loadActivities()));
+  };
+}

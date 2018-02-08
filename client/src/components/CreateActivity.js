@@ -7,7 +7,7 @@ class ActivityEntry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: "Cameron Gottschall",
+      userHandle: "Cam G",
       post:"",
       dateTime: '',
       location:"Austin",
@@ -27,7 +27,6 @@ class ActivityEntry extends Component {
         />
         <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
             e.preventDefault();
-            this.setState({dateTime: "hello" });
             this.props.createActivity(this.state);
             this.setState({post:""});
             }

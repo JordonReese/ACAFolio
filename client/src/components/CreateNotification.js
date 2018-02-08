@@ -1,6 +1,7 @@
 // Used to create a custome post on the activity feed
 
 
+
 import React, {Component} from "react";
 
 class NotificationEntry extends React.Component {
@@ -25,17 +26,7 @@ class NotificationEntry extends React.Component {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+import React from "react";
 
 
 
