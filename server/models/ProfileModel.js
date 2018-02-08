@@ -39,7 +39,12 @@ const userSchema = new Schema({
     ACAID: {
       type: String,
       required: true
-    }
+    },
+    Notifications: {
+      type: Array,
+      required: false
+      }
+      
   });
 
 
