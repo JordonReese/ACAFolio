@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Navbar, Nav, NavItem, NavDropdown, Button, MenuItem } from "react-bootstrap";
+import { Navbar, Nav, NavItem} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NotificationsContainer from "../containers/NotificationsContainer"
 

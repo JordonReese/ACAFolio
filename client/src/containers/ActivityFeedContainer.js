@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ActivityFeed from "../components/ActivityFeed";
-import {deleteActivity, updateActivity, populateComments} from "../actions";
+import {deleteActivity, updateActivity, populateComments, createNotification} from "../actions";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
@@ -22,6 +22,9 @@ function mapDispatchToProps(dispatch) {
     },
     populateComments: function(comments) {
       dispatch(populateComments(comments));
+    },
+    createNotification: function(id, notifications) {
+      dispatch(createNotification(id, notifications));
     }
   }
 }

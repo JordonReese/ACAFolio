@@ -118,3 +118,16 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
+
+//create notifications
+
+export function createNotification(id, notification) {
+  return function(dispatch) {
+    fetch(`/`, {
+      method: "POST",
+      headers: {"Accept":"application/json",
+                "Content-Type":"application/json"},
+      body: JSON.stringify(notification)
+    })//.then(()=> dispatch(pushNotification()));
+  };
+}
