@@ -10,12 +10,13 @@ export function loadProfile() {
 }
 export function profileLoaded(profile) {
   return {
-    type: "PROFILE_LOADED",
+    type: "PROFILES_LOADED",
     value: profile
   };
 }
 
 export function createProfile(state) {
+  console.log("create profile", state);
   return function (dispatch) {
     fetch("/profile", {
       method: "POST",

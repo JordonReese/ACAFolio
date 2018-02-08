@@ -5,6 +5,7 @@ import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./components/TopNavbar";
 import PersonalViewContainer from "./containers/PersonalViewContainer";
 import PublicViewContainer from "./containers/PublicViewContainer";
+import {createProfile} from "./actions";
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends Component {
     this.handleSignUp = this.handleSignUp.bind(this);
   }
 
-  handleSignUp(credentials) {
+  handleSignUp(credentials, profile) {
     const { username, password, confirmPassword } = credentials;
     if (!username.trim() || !password.trim() ) {
       this.setState({
@@ -50,6 +51,7 @@ class App extends Component {
           authenticated: token
         });
       });
+      this.props.createProfile(profile);
     }
   }
 
