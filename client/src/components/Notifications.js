@@ -3,6 +3,7 @@ import React from "react";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 import { NavDropdown, MenuItem } from "react-bootstrap";
+import CreateNotification from "./CreateNotification";
 
 
 function Notifications(props) {
@@ -16,10 +17,10 @@ while(true){
         </NavDropdown>
     );
   }
+  // setTimeout(1000);
 }
+
 export default Notifications;
-
-
 
 // Name of poster
 // time of posting

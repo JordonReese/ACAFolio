@@ -30,8 +30,34 @@ function activities(state = [], action) {
   return state;
 }
 
+/* COMMENTS reducers */
+// function comments(state = [], action) {
+//   if(action.type === "COMMENTS_LOADED") {
+//     return action.value;
+//   }
+//   return state;
+// }
+//
+// function actComments(state = [], action) {
+//   if(action.type === "POPULATE_COMMENTS") {
+//     return action.value;
+//   }
+//   return state;
+// }
+//
+// function comment(state = [], action) {
+//   if(action.type === "GET_COMMENT_DONE") {
+//     return action.value;
+//   }
+//   return state;
+// }
+
+
 const rootReducer = combineReducers({
-  activities, notifications, profiles, profile
+  notifications
+  , profiles, profile
+  , activities
+  // , comments, actComments, comment, actComments
 });
 
 export default rootReducer;

@@ -31,7 +31,12 @@ const profileSchema = new Schema({
     bio: {
       type: String,
       required: true
-    }
+    },
+    Notifications: {
+      type: Array,
+      required: false
+      }
+      
   });
 
 
