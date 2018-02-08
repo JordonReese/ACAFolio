@@ -1,42 +1,34 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  FirstName: {
+const profileSchema = new Schema({
+  smhandle: {
+      type: String,
+      required: true
+    },
+    firstName: {
+      type: String,
+      required: true
+    },
+    lastName: {
+      type: String,
+      required: true
+    },
+    email: {
       type: String,
       unique: true,
       lowercase: true,
       required: true
     },
-    LastName: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true
-    },
-    Email: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true
-    },
-    Birthday: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true
-    },
-    UserName: {
-      type: String,
-      unique: true,
-      lowercase: true,
-      required: true
-    },
-    Password: {
+    birthday: {
       type: String,
       required: true
     },
-    ACAID: {
+    cityState: {
+      type: String,
+      required: true
+    },
+    bio: {
       type: String,
       required: true
     },
@@ -48,4 +40,4 @@ const userSchema = new Schema({
   });
 
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Profile", profileSchema);

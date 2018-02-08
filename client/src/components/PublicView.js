@@ -1,24 +1,59 @@
-import React from "react";
+import React, { Component } from "react";
 // import "./App.css";
 // import Main from "./components/Main";
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 // import AddressContainer from "./containers/AddressContainer";
-import ActivityFeedContainer from "../containers/ActivityFeedContainer";
+// import ActivityFeedContainer from "../containers/ActivityFeedContainer";
+import ProfileCreationContainer from "../containers/ProfileCreationContainer";
 import ProfileDetailContainer from "../containers/ProfileDetailContainer";
+import EditProfileContainer from "../containers/ProfileDetailContainer";
+import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 
-function PublicView() {
-  return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6">
-            <ActivityFeedContainer meOnly="true"/>
-          </div>
-          <div className="col-md-6">
-            <ProfileDetailContainer />
-          </div>
-        </div>
-      </div>
-  );
 
-}
+class PublicView extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.props.loadProfile();
+    this.timerID = setInterval(
+      () => this.tick(),
+      10000    // this is every 10 sec.
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    // this.props.loadProfile();
+        return (
+            <div>
+              <div>Why isn't the public page working???</div>
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div>{this.props.date}</div>
+                  {/* <ProfileCreationContainer /> */}
+                    <ActivityFeedContainer />
+                  </div>
+                  {/* <div className="col-md-6">
+                    <ProfileDetailContainer />
+                  </div> */}
+                </div>
+              </div>
+             </div>
+        );
+      }
+    }
 export default (PublicView);

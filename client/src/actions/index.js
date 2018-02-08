@@ -1,33 +1,33 @@
-export function loadProfiles() {
+export function loadProfile() {
   return function (dispatch) {
-    fetch("/profiles")
+    fetch("/profile")
     .then((response) => {
       return response.json();
-    }).then((profiles) => {
-      dispatch(profilesLoaded(profiles));
+    }).then((profile) => {
+      dispatch(profileLoaded(profile));
     });
   };
 }
-export function profilesLoaded(profiles) {
+export function profileLoaded(profile) {
   return {
-    type: "PROFILES_LOADED",
-    value: profiles
+    type: "PROFILE_LOADED",
+    value: profile
   };
 }
 
 export function createProfile(state) {
   return function (dispatch) {
-    fetch("/profiles", {
+    fetch("/profile", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(state)
-    }).then(() => dispatch(loadProfiles()));
+    }).then(() => dispatch(loadProfile()));
   };
 }
 
 export function getProfile(id) {
   return function (dispatch) {
-    fetch(`/profiles/${id}`)
+    fetch(`/profile/${id}`)
     .then( (response) => {
       return response.json();
     }).then((profile) => {
@@ -44,9 +44,9 @@ function getProfileDone(profile) {
 
 export function deleteProfile(id) {
   return function (dispatch) {
-    fetch(`/profiles/${id}`, {
+    fetch(`/profile/${id}`, {
       method: "DELETE"
-    }).then(() => dispatch(loadProfiles()));
+    }).then(() => dispatch(loadProfile()));
   };
 }
 

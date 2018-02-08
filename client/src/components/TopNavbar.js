@@ -14,7 +14,7 @@ const TopNavbar = (props) => {
                 </Nav>
                 <Nav pullRight>
                   <NotificationsContainer />
-                  <Link to="/public"><Navbar.Text>Public View</Navbar.Text></Link>
+                <Link to="/public"><Navbar.Text>My Profile</Navbar.Text></Link>
                 </Nav>
               </div>
               );
