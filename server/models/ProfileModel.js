@@ -2,41 +2,45 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
+  userId: {
+      type: String,
+      required: false
+    },
   smhandle: {
       type: String,
-      required: true
+      required: false
     },
     firstName: {
       type: String,
-      required: true
+      required: false
     },
     lastName: {
       type: String,
-      required: true
+      required: false
     },
     email: {
       type: String,
-      unique: true,
-      lowercase: true,
-      required: true
+      unique: false,
+      lowercase: false,
+      required: false
     },
     birthday: {
       type: String,
-      required: true
+      required: false
     },
     cityState: {
       type: String,
-      required: true
+      required: false
     },
     bio: {
       type: String,
-      required: true
+      required: false
     },
-    Notifications: {
+    notifications: {
       type: Array,
       required: false
       }
-      
+
   });
 
 

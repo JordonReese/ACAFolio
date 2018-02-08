@@ -1,7 +1,4 @@
 // Used to create a custome post on the activity feed
-
-
-
 import React, {Component} from "react";
 
 class NotificationEntry extends React.Component {
@@ -18,17 +15,10 @@ class NotificationEntry extends React.Component {
 
 
   render() {
-    return (
-      
+    return
+        console.log("hello");
 
-    )
   }
 }
 
-
-import React from "react";
-
-
-
-
-export default CreateNotification;
+export default NotificationEntry;

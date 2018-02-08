@@ -3,8 +3,8 @@ import ProfileModel from "../models/ProfileModel";
 //List Profile
 export function list(request, response) {
   ProfileModel.find({}).exec()
-  .then(Profile => {
-    return response.json(Profile);
+  .then(profiles => {
+    return response.json(profiles);
   });
 }
 
@@ -12,33 +12,24 @@ export function list(request, response) {
 export function show(request, response)
 {
    ProfileModel.findById(request.params.id).exec()
-   .then(Profile => {
-     return response.json(Profile);
+   .then(profile => {
+     return response.json(profile);
    });
 }
 
 //Create Profile
 export function create(request, response) {
-   const contact = new ProfileModel({
-     smhandle:request.body.smhandle,
-     firstName:request.body.firstName,
-     lastName:request.body.lastName,
-     email:request.body.email,
-     birthday:request.body.birthday,
-     cityState:request.body.cityState,
-     bio:request.body.bio,
-     Notifications: []
-   });
-   contact.save()
-   .then(Profile => {
-     return response.json(Profile);
+   const profile = new ProfileModel(request.body);
+   profile.save()
+   .then(profile => {
+     return response.json(profile);
    });
 }
 
 //Remove Profile
 export function remove(request, response) {
   ProfileModel.remove({_id: request.params.id})
-  .then(Profiles => {
+  .then(profile => {
     return response.send("You have deleted a Profile.");
   });
 }

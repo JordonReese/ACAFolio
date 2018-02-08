@@ -4,7 +4,6 @@ import React, { Component } from "react";
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
 // import AddressContainer from "./containers/AddressContainer";
 // import ActivityFeedContainer from "../containers/ActivityFeedContainer";
-import ProfileCreationContainer from "../containers/ProfileCreationContainer";
 import ProfileDetailContainer from "../containers/ProfileDetailContainer";
 import EditProfileContainer from "../containers/ProfileDetailContainer";
 import ActivityFeedContainer from "../containers/ActivityFeedContainer";
@@ -44,7 +43,7 @@ class PublicView extends Component {
                 <div className="row">
                   <div className="col-md-6">
                     <div>{this.props.date}</div>
-                  {/* <ProfileCreationContainer /> */}
+                  {/* <EditProfileContainer /> */}
                     <ActivityFeedContainer />
                   </div>
                   {/* <div className="col-md-6">
