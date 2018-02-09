@@ -23,15 +23,15 @@ class SignUp extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     }, {
-      userId: this.state.userID,
+      userId: "",
       smhandle: this.state.smhandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      email: this.state.email,
+      email: this.state.username,
       birthday: "",
       cityState: "",
       bio: "",
-      notifications:[]
+      notifications: []
     }
   );
   }
