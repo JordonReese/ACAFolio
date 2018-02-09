@@ -51,6 +51,7 @@ class App extends Component {
           authenticated: token
         });
       });
+      console.log("handleSignUp", profile);
       this.props.createProfile(profile);
     }
   }

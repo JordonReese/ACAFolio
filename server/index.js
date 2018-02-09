@@ -36,6 +36,7 @@ app.use(listRoutes);
 app.use(articleRoutes);
 app.use(ActivityRoutes);
 app.use(CommentRoutes);
+app.use(ProfileRoutes);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

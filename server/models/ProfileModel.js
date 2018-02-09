@@ -20,8 +20,6 @@ const profileSchema = new Schema({
     },
     email: {
       type: String,
-      unique: false,
-      lowercase: false,
       required: false
     },
     birthday: {
@@ -39,9 +37,9 @@ const profileSchema = new Schema({
     notifications: {
       type: Array,
       required: false
-      }
+    }
 
   });
 
 
-module.exports = mongoose.model("Profile", profileSchema);
+module.exports = mongoose.model("profile", profileSchema);

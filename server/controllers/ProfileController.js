@@ -22,7 +22,12 @@ export function create(request, response) {
    const profile = new ProfileModel(request.body);
    profile.save()
    .then(profile => {
+     console.log("Profile saved to the database");
      return response.json(profile);
+   // })
+   // .catch(err => {
+   //   console.log("create profile error", err);
+     // next(err);
    });
 }
 
