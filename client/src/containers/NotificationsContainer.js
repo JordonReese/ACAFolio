@@ -3,7 +3,6 @@ import Notifications from "../components/Notifications";
 
 function mapStateToProps(state) {
   return {
-
   };
 }
 
