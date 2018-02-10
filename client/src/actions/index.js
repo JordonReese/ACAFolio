@@ -119,15 +119,19 @@ export function updateComments(actId, arrComments) {
   };
 }
 
-//create notifications
-
-export function createNotification(id, notification) {
+/* NOTIFICATIONS SECTION */
+//create notification
+export function createNotification(tag) {
   return function(dispatch) {
-    fetch(`/`, {
+    fetch(`/users/${tag}`, {
       method: "POST",
       headers: {"Accept":"application/json",
                 "Content-Type":"application/json"},
-      body: JSON.stringify(notification)
+      body: JSON.stringify(tag)
     })//.then(()=> dispatch(pushNotification()));
   };
 }
+
+// export function loadNotifications() {
+//
+// }

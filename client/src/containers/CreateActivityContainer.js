@@ -6,6 +6,10 @@ function mapDispatchToProps(dispatch){
   return {
     createActivity: (activity)=> {
       dispatch(createActivity(activity));
+    },
+    createNotification: (tags) => {
+      console.log(tags);
+      // distpatch(createNotification(notification));
     }
   };
 }

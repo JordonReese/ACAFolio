@@ -13,9 +13,7 @@ class ActivityEntry extends Component {
       dateTime: '',
       location:"Austin",
       likesCount: 0,
-      notifications: {
-        handleTags: []
-      }
+      handleTags: []
     }
   }
   render() {
@@ -34,18 +32,6 @@ class ActivityEntry extends Component {
       return day + ' ' + monthNames[monthIndex] + ' ' + year;
     }
 
-    // function catchTag(e){
-    //   let splitString = e.target.value.split(" ");
-    //   console.log(splitString);
-    //   // splitString.map(word => {
-    //   //   if(word[0] === "@") {
-    //   //     let handleTags = [];
-    //   //     word.push(handleTags);
-    //   //     console.log(handleTags);
-    //   //   }
-    //   // })
-    //
-    // }
 
     return (
       <div className="createActivity">
@@ -61,16 +47,17 @@ class ActivityEntry extends Component {
             let handleTags=[];
             splitString.map(word => {
               if(word[0] === "@"){
-                handleTags.push(word);
+                handleTags.push(word.toLowerCase());
               }
             });
-            this.setState({"notifications": handleTags})
+            this.setState({"handleTags": handleTags})
+            console.log("state.handleTags", this.state.handleTags);
           }}
         />
         <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
             e.preventDefault();
             this.props.createActivity(this.state);
-            this.props.createNotification(this.state);
+            this.props.createNotification(this.state.handleTags);
             this.setState({post:""});
             }
           }

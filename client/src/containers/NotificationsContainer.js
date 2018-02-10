@@ -3,6 +3,18 @@ import Notifications from "../components/Notifications";
 
 function mapStateToProps(state) {
   return {
+    notifications:[
+      {
+        fromUserHandle:"CamG",
+        notification: "You have been tagged",
+        dateTime: "dateTime"
+      },
+      {
+        fromUserHandle:"CamG",
+        notification: "You have been tagged",
+        dateTime: "dateTime"
+      }
+    ]
 
   };
 }
