@@ -3,10 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./components/TopNavbar";
-// import Secret from "./Secret";
-// import PersonalView from "./components/PersonalView"
-import PersonalViewContainer from "./containers/PersonalViewContainer"
-import PublicView from "./components/PublicView"
+import PersonalViewContainer from "./containers/PersonalViewContainer";
+import PublicViewContainer from "./containers/PublicViewContainer";
+import {createProfile} from "./actions";
 
 class App extends Component {
   constructor() {
@@ -20,7 +19,7 @@ class App extends Component {
     this.handleSignUp = this.handleSignUp.bind(this);
   }
 
-  handleSignUp(credentials) {
+  handleSignUp(credentials, profile) {
     const { username, password, confirmPassword } = credentials;
     if (!username.trim() || !password.trim() ) {
       this.setState({
@@ -39,6 +38,7 @@ class App extends Component {
       }).then((res) => {
         return res.json();
       }).then((data) => {
+        console.log("data is", data);
         if(data.error){
           this.setState({
             signUpSignInError: data.error
@@ -51,6 +51,10 @@ class App extends Component {
           signUpSignInError: "",
           authenticated: token
         });
+      })
+        .then(()=> {
+        console.log("handleSignUp", profile);
+        this.props.createProfile(profile);
       });
     }
   }
@@ -106,7 +110,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/public" component={PublicView} />
+          <Route path="/public" component={PublicViewContainer} />
           <Route path="/" component={PersonalViewContainer} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>

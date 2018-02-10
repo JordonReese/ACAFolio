@@ -3,7 +3,7 @@ import bcrypt from "bcrypt-nodejs";
 import jwt from "jwt-simple";
 
 export function signIn(req, res) {
-  
+
   console.log("logged in now");
   res.json({ token: tokenForUser(req.user)});
 }
@@ -51,4 +51,3 @@ function tokenForUser(user) {
   const timestamp = new Date().getTime();
   return jwt.encode({ userId: user.id, iat: timestamp }, process.env.SECRET);
 }
-

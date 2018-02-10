@@ -1,46 +1,45 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  FirstName: {
+const profileSchema = new Schema({
+  userId: {
       type: String,
-      unique: true,
-      lowercase: true,
-      required: true
+      required: false
     },
-    LastName: {
+  userHandle: {
       type: String,
-      unique: true,
-      lowercase: true,
-      required: true
+      required: false
     },
-    Email: {
+    firstName: {
       type: String,
-      unique: true,
-      lowercase: true,
-      required: true
+      required: false
     },
-    Birthday: {
+    lastName: {
       type: String,
-      unique: true,
-      lowercase: true,
-      required: true
+      required: false
     },
-    UserName: {
+    email: {
       type: String,
-      unique: true,
-      lowercase: true,
-      required: true
+      required: false
     },
-    Password: {
+    birthday: {
       type: String,
-      required: true
+      required: false
     },
-    ACAID: {
+    cityState: {
       type: String,
-      required: true
+      required: false
+    },
+    bio: {
+      type: String,
+      required: false
+    },
+    notifications: {
+      type: Array,
+      required: false
     }
+
   });
 
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("profile", profileSchema);

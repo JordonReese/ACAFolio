@@ -42,6 +42,7 @@ class ActivityEntry extends Component {
           type='text'
           placeholder="What's Good...?"
           onChange={(e) => {this.setState({post:e.target.value, dateTime: formatDate(new Date())})}}
+
           onInput={(e)=>{
             let splitString = e.target.value.split(" ");
             let handleTags=[];
@@ -68,6 +69,7 @@ class ActivityEntry extends Component {
 
   }
 }
+
 // if the tag
 
 // if(this.props.createActivity) {
@@ -75,5 +77,6 @@ class ActivityEntry extends Component {
 //     dateTime: new Date(),
 //   });
 //   this.props.createActivity(this.state);
+
 
 export default ActivityEntry;

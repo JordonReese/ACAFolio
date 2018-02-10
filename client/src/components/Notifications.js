@@ -1,48 +1,76 @@
 // Showing user's notifications
-import React from "react";
-// import {Link} from "react-router-dom";
-// import PropTypes from "prop-types";
+import React, { Component } from "react";
 import { NavDropdown, MenuItem } from "react-bootstrap";
 
 
-function Notifications(props) {
+class Notifications extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        fromUserHandle: "Jordon",
+        notification: "has commented on your post!",
+        dateTime: new Date(),
+        visible: true,
+        notificationNumber: 4
+      }
+    }
 
-while(true){
-  return (
-        <NavDropdown title="Notifications">
-          <MenuItem href="#">Notif 1</MenuItem>
-          <MenuItem divider />
-          <MenuItem href="#">Notif 2</MenuItem>
-        </NavDropdown>
-    );
+    handleClick(event, ACTION, notificationArray, notificationId) {
+      event.preventDefault();
+      switch(ACTION) {
+        case "DELETE":
+          notificationArray.splice(notificationId, 1);
+          this.props.updateNotifications(this.props.notificationId)
+    }
+
+
+
   }
-  // setTimeout(1000);
+
+
+
+
+
+    render(){
+    function displayNotifications() {
+      while(this.state.notificationNumber > 0){
+          <NavDropdown title="Notifications">
+            <MenuItem href="#">Notif 1</MenuItem>
+            <MenuItem divider />
+            <MenuItem href="#">Notif 2</MenuItem>
+          </NavDropdown>
+        }
+      }
+
+
+      return (
+        {displayNotifications}
+        )
+      }
+
+
 }
+
+
 
 export default Notifications;
 
-// Name of poster
-// time of posting
-// date of posting
-// post
-// cam liked your post
-// cam commented on your post
-// you've been tagged in a post by cam
-// someone liked your post - link to post that was liked
-// has to have an ID associated with it
+/*
 
-// someone have application rerender so that the activity feed and notifications are updated
-// create a notification when someone creates an event
-// incriment a number in user profile and push that update to the user?
-// set a time on the notifications to update every 1 min
+display, delete yours, add others
+display - go to currentProfile(part of Global State - not built), which will contain notifications array and display
+delete - delete only your notifications - (passed into props) create new array with all notificaitons isnce you cant edit props - pass new array to update function (which updates profile) update the specific object in profile, notifications, done in the notifications component and only effects your personal array
+add - get a list of all user handles[array that I'll loop on], use the handle found from createactivity to find profile by handle, take notifications element - add notification by array.push, update the profile by passing the notifications array back using the updateNotifications function,
 
-//Timer
-// create while(true) loop
-// create timer component which doesn't return anything just calls NotificationsContainer
-// set time at bottom of component
-// call timerComponent in TopNavbar.js
+create fake notifications array and build the funcations to visible, add, delete
 
-// sending out notification
-// whose it from
-// what's it consist of - post, tag, tagged post
-// who does it go to?
+
+
+*/
+
+// Notification housed in user object as an array
+// 1. @ sign generates action call
+// 2. Query the database (findy by handle)
+// 3. Generate notification "username ${_____} tagged you
+// 4. Push message to the notifications array
+// 5. Render notification

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import AppContainer from "./AppContainer";
 import "./index.css";
 import store from "./store";
 import {Provider} from "react-redux";
@@ -13,6 +13,6 @@ window.fetch = (url, settings = {}) => {
 //CMC comment.  Testing git and Github.
 
 ReactDOM.render(
-  <Provider store={store}><App /></Provider>,
+  <Provider store={store}><AppContainer /></Provider>,
   document.getElementById("root")
 );

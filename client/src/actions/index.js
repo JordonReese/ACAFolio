@@ -1,27 +1,29 @@
-export function loadProfiles() {
+export function loadProfile() {
   return function (dispatch) {
     fetch("/profiles")
     .then((response) => {
       return response.json();
-    }).then((profiles) => {
-      dispatch(profilesLoaded(profiles));
+    }).then((profile) => {
+      dispatch(profileLoaded(profile));
     });
   };
 }
-export function profilesLoaded(profiles) {
+export function profileLoaded(profile) {
   return {
     type: "PROFILES_LOADED",
-    value: profiles
+    value: profile
   };
 }
 
-export function createProfile(state) {
+export function createProfile(profile) {
+  console.log("create profile", profile);
   return function (dispatch) {
     fetch("/profiles", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(state)
-    }).then(() => dispatch(loadProfiles()));
+      body: JSON.stringify(profile)
+    }).then(() => console.log("profile saved"));
+    // }).then(() => dispatch(loadProfile()));
   };
 }
 
@@ -42,11 +44,40 @@ function getProfileDone(profile) {
   };
 }
 
+export function getProfileByUserId(userId) {
+  return function (dispatch) {
+    fetch(`/profiles/${userId}`)
+    .then( (response) => {
+      return response.json();
+    }).then((profile) => {
+      dispatch(getProfileDone(profile));
+    });
+  };
+}
+
 export function deleteProfile(id) {
   return function (dispatch) {
     fetch(`/profiles/${id}`, {
       method: "DELETE"
-    }).then(() => dispatch(loadProfiles()));
+    }).then(() => dispatch(loadProfile()));
+  };
+}
+
+/* User Section */
+export function getUserByEmail(email) {
+  return function (dispatch) {
+    fetch(`/profiles/${email}`)
+    .then( (response) => {
+      return response.json();
+    }).then((user) => {
+      dispatch(getUserDone(user));
+    });
+  };
+}
+function getUserDone(user) {
+  return {
+    type: "GET_USER_DONE",
+    value: user
   };
 }
 
@@ -118,7 +149,6 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
-
 /* NOTIFICATIONS SECTION */
 //create notification
 export function createNotification(tag) {
@@ -135,3 +165,10 @@ export function createNotification(tag) {
 // export function loadNotifications() {
 //
 // }
+export const updateNotification = () => {
+  return (
+    type: "UPDATE_NOTIFICATION",
+    value: notifications
+  )
+}
+
