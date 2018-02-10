@@ -11,6 +11,7 @@ import articleRoutes from "./routes/blog/ArticleRoutes";
 import ActivityRoutes from "./routes/ActivityRoutes.js";
 import ProfileRoutes from "./routes/ProfileRoutes.js";
 import CommentRoutes from "./routes/CommentRoutes.js";
+import UserRoutes from "./routes/UserRoutes.js";
 
 
 mongoose.set("debug", true);
@@ -37,6 +38,7 @@ app.use(articleRoutes);
 app.use(ActivityRoutes);
 app.use(CommentRoutes);
 app.use(ProfileRoutes);
+app.use(UserRoutes);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
