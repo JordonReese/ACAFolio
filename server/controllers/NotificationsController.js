@@ -12,7 +12,7 @@ export const list = (request, response) => {
 export const show = (request, response) => {
   ProfileModel.findOne({userhandle: request.params.userHandle}).exec()
   .then(notification => {
-    return response.json({theHandle: request.params.userhandle});
+    return response.json({theHandle: request.params.userHandle});
   });
 }
 
