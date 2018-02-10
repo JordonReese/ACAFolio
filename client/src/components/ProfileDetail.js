@@ -14,7 +14,7 @@ function ProfileDetail(props) {
 //         Image
 //       </div>
 //       <div className="ProfileDetail">
-//         smhandle
+//         userHandle
 //       </div>
 //       <div className="ProfileDetail">
 //         firstName
@@ -45,7 +45,7 @@ const profileDivs = props.profiles.map(function(profile){
   return
   <div>
     <ul>
-    <ol>{this.props.profile.smhandle}</ol>
+    <ol>{this.props.profile.userHandle}</ol>
     <ol>{this.props.profile.firstName}</ol>
     <ol>{this.props.profile.lastName}</ol>
     <ol>{this.props.profile.email}</ol>

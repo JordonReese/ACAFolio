@@ -10,7 +10,7 @@ class ProfileCreation extends Component {
     super();
 
     this.state = {
-      smhandle:"",
+      userHandle:"",
       firstName: "",
       lastName: "",
       email: "",
@@ -23,7 +23,7 @@ class ProfileCreation extends Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onEdit({
-      smhandle: this.state.smhandle,
+      userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
@@ -67,12 +67,12 @@ class ProfileCreation extends Component {
         <ControlLabel>Social Media Handle</ControlLabel>
         <FormControl
           type="text"
-          name="smhandle"
+          name="userHandle"
           onChange={e => {
             this.setState({[e.target.name]: e.target.value});
           }}
           placeholder="Enter handle, Ex: @CodingRocks"
-          value={this.state.smhandle}
+          value={this.state.userHandle}
         />
       </FormGroup>
 
