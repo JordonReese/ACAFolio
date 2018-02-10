@@ -43,8 +43,8 @@ const userSchema = new Schema({
     Notifications: {
       type: Array,
       required: false
-      }
-      
+    }
+
   });
 
 
