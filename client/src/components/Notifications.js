@@ -3,7 +3,6 @@ import React from "react";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 import { NavDropdown, MenuItem } from "react-bootstrap";
-// import CreateNotification from "./CreateNotification";
 
 
 function Notifications(props) {
@@ -17,7 +16,6 @@ while(true){
         </NavDropdown>
     );
   }
-  // setTimeout(1000);
 }
 
 export default Notifications;
@@ -29,14 +27,3 @@ export default Notifications;
 // 3. Generate notification "username ${_____} tagged you
 // 4. Push message to the notifications array
 // 5. Render notification
-
-// 1.
-// Event listener/Key listener - in createActivityFeed and CreateCommentsComponent
-// 
-
-
-//Timer
-// create while(true) loop
-// create timer component which doesn't return anything just calls NotificationsContainer
-// set time at bottom of component
-// call timerComponent in TopNavbar.js
