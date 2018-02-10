@@ -54,7 +54,7 @@ class ActivityFeed extends Component {
                  e.preventDefault();
                  this.setState({post: e.target.value});
                }}></textarea>
-               <button className="editEntryButton" type='sumbit' onClick={(e)=> {
+             <button className="editEntryButton" type='submit' onClick={(e)=> {
                  e.preventDefault();
                  activity.post = this.state.post;
                  this.props.updateActivity(activity._id, {"post":this.state.post});

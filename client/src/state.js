@@ -6,7 +6,8 @@ export default {
   appDate: new Date(),
   actId: null,
   showComments: false,
-  currentProfile:{}
+  currentProfile:{},
+  profiles:[]
 };
 
 // Data not getting from database to state.  All are empty, headed to reducers.

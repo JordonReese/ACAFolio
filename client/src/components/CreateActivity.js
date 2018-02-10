@@ -12,9 +12,14 @@ class ActivityEntry extends Component {
       dateTime: '',
       location:"Austin",
       likesCount: 0,
+      notifications: {
+        handleTags: []
+      }
     }
   }
   render() {
+
+
     return (
       <div className="createActivity">
 
@@ -24,8 +29,18 @@ class ActivityEntry extends Component {
           type='text'
           placeholder="What's Good...?"
           onChange={(e) => {this.setState({post:e.target.value, dateTime: new Date()})}}
+          onInput={(e)=>{
+            let splitString = e.target.value.split(" ");
+            let handleTags=[];
+            splitString.map(word => {
+              if(word[0] === "@"){
+                handleTags.push(word);
+              }
+            });
+            this.setState({"notifications": handleTags})
+          }}
         />
-        <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
+      <button className="activityEntryButton" type='submit' onClick={(e)=> {
             e.preventDefault();
             this.props.createActivity(this.state);
             this.setState({post:""});
@@ -38,12 +53,5 @@ class ActivityEntry extends Component {
 
   }
 }
-
-
-// if(this.props.createActivity) {
-//   this.setState({
-//     dateTime: new Date(),
-//   });
-//   this.props.createActivity(this.state);
 
 export default ActivityEntry;

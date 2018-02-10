@@ -1,28 +1,29 @@
-//import React from "react";
-//import {Link} from "react-router-dom";
+//Comparing to CreateActivity.js
+
 import React, { Component } from "react";
-import { createProfile } from "../actions";
-// import PropTypes from "prop-types";
+// import { createProfile } from "../actions";
 import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
-class ProfileCreation extends Component {
-  constructor() {
-    super();
+class EditProfile extends Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
-      userHandle:"",
-      firstName: "",
-      lastName: "",
-      email: "",
-      birthday:"",
-      cityState:"",
-      bio:""
-    };
-  }
+      currentProfile:{
+      userHandle:"@CodeIsC",
+      firstName: "CodeIs",
+      lastName: "Cool",
+      email: "codeiscool@gmail.com",
+      birthday:"2/14/2000",
+      cityState:"Austin, TX",
+      bio:"#CodeIsLife"
+    }
+  };
+}
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onEdit({
+    this.props.onSignUp({
       userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -124,4 +125,4 @@ class ProfileCreation extends Component {
   }
 }
 
-export default ProfileCreation;
+export default EditProfile;

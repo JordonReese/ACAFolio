@@ -27,11 +27,11 @@ class SignUp extends Component {
       userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
-      email: this.state.email,
+      email: this.state.username,
       birthday: "",
       cityState: "",
       bio: "",
-      notifications:[]
+      notifications: []
     }
   );
   }

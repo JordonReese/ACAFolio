@@ -17,7 +17,6 @@ class NotificationEntry extends React.Component {
   render() {
     return
         console.log("hello");
-
   }
 }
 

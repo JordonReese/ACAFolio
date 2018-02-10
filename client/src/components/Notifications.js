@@ -3,7 +3,7 @@ import React from "react";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 import { NavDropdown, MenuItem } from "react-bootstrap";
-import CreateNotification from "./CreateNotification";
+// import CreateNotification from "./CreateNotification";
 
 
 function Notifications(props) {
@@ -22,28 +22,21 @@ while(true){
 
 export default Notifications;
 
-// Name of poster
-// time of posting
-// date of posting
-// post
-// cam liked your post
-// cam commented on your post
-// you've been tagged in a post by cam
-// someone liked your post - link to post that was liked
-// has to have an ID associated with it
 
-// someone have application rerender so that the activity feed and notifications are updated
-// create a notification when someone creates an event
-// incriment a number in user profile and push that update to the user?
-// set a time on the notifications to update every 1 min
+// Notification housed in user object as an array
+// 1. @ sign generates action call
+// 2. Query the database (findy by handle)
+// 3. Generate notification "username ${_____} tagged you
+// 4. Push message to the notifications array
+// 5. Render notification
+
+// 1.
+// Event listener/Key listener - in createActivityFeed and CreateCommentsComponent
+// 
+
 
 //Timer
 // create while(true) loop
 // create timer component which doesn't return anything just calls NotificationsContainer
 // set time at bottom of component
 // call timerComponent in TopNavbar.js
-
-// sending out notification
-// whose it from
-// what's it consist of - post, tag, tagged post
-// who does it go to?

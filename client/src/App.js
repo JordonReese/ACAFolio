@@ -38,6 +38,7 @@ class App extends Component {
       }).then((res) => {
         return res.json();
       }).then((data) => {
+        console.log("data is", data);
         if(data.error){
           this.setState({
             signUpSignInError: data.error
@@ -50,8 +51,11 @@ class App extends Component {
           signUpSignInError: "",
           authenticated: token
         });
+      })
+        .then(()=> {
+        console.log("handleSignUp", profile);
+        this.props.createProfile(profile);
       });
-      this.props.createProfile(profile);
     }
   }
 
