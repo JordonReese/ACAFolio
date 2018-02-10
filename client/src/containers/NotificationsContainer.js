@@ -4,7 +4,19 @@ import { updateNotification } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    notifications: state.notifications
+    notifications:[
+      {
+        fromUserHandle:"CamG",
+        notification: "You have been tagged",
+        dateTime: "dateTime"
+      },
+      {
+        fromUserHandle:"CamG",
+        notification: "You have been tagged",
+        dateTime: "dateTime"
+      }
+    ]
+
   };
 }
 
