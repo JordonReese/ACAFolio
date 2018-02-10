@@ -7,9 +7,12 @@ class SignUp extends Component {
     super();
 
     this.state = {
+      firstName:"",
+      lastName:"",
       username: "",
       password: "",
       confirmPassword: "",
+      smhandle:""
     };
   }
 
@@ -19,19 +22,57 @@ class SignUp extends Component {
       username: this.state.username.toLowerCase(),
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
-    });
+    }, {
+      userId: "",
+      smhandle: this.state.smhandle,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.username,
+      birthday: "",
+      cityState: "",
+      bio: "",
+      notifications: []
+    }
+  );
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <FormGroup>
-          <ControlLabel>Username</ControlLabel>
+          <ControlLabel>First Name</ControlLabel>
+          <FormControl
+            type="text"
+            name="firstName"
+            onChange={e => {
+              this.setState({firstName: e.target.value, smhandle:"@"+e.target.value+this.state.lastName[0]});
+              //this.setState({smhandle: e.target.value});
+            }}
+            placeholder="Enter first name"
+            value={this.state.firstName}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <ControlLabel>Last Name</ControlLabel>
+          <FormControl
+            type="text"
+            name="lastName"
+            onChange={e => {
+              this.setState({lastName: e.target.value, smhandle: "@"+this.state.firstName+e.target.value[0].toUpperCase()});
+            }}
+            placeholder="Enter last name"
+            value={this.state.lastName}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <ControlLabel>Email/Username</ControlLabel>
           <FormControl
             type="email"
             name="username"
             onChange={e => {
-              this.setState({[e.target.name]: e.target.value});
+              this.setState({username: e.target.value});
             }}
             placeholder="Enter Username"
             value={this.state.username}
@@ -44,7 +85,7 @@ class SignUp extends Component {
             type="password"
             name="password"
             onChange={e => {
-              this.setState({[e.target.name]: e.target.value});
+              this.setState({password: e.target.value});
             }}
             placeholder="Enter Password"
             value={this.state.password}
@@ -57,10 +98,21 @@ class SignUp extends Component {
             type="password"
             name="confirmPassword"
             onChange={e => {
-              this.setState({[e.target.name]: e.target.value});
+              this.setState({confirmPassword: e.target.value});
             }}
             placeholder="Confirm Password"
             value={this.state.confirmPassword}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <ControlLabel>Social Media Handle</ControlLabel>
+          <FormControl
+            type="text"
+            name="smhandle"
+            placeholder="auto-generated social media handle"
+            value={this.state.smhandle}
+            disabled
           />
         </FormGroup>
 
