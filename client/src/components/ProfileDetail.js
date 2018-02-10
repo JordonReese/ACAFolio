@@ -8,39 +8,6 @@ import React from "react";
 
 function ProfileDetail(props) {
 
-//   return (
-//     <div className="ProfileInfo">
-//       <div className="ProfilePicture">
-//         Image
-//       </div>
-//       <div className="ProfileDetail">
-//         smhandle
-//       </div>
-//       <div className="ProfileDetail">
-//         firstName
-//       </div>
-//       <div className="ProfileDetail">
-//         lastName
-//       </div>
-//       <div className="ProfileDetail">
-//         email
-//       </div>
-//       <div className="ProfileDetail">
-//         birthday
-//       </div>
-//       <div className="ProfileDetail">
-//         cityState
-//       </div>
-//       <div className="ProfileDetail">
-//         bio
-//       </div>
-//       <div className="ProfileDetail">
-//         Attendedcampus
-//       </div>
-//     </div>
-//
-//   )
-// }
 const profileDivs = props.profiles.map(function(profile){
   return
   <div>
