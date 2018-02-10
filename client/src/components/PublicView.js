@@ -38,7 +38,7 @@ class PublicView extends Component {
     // this.props.loadProfile();
         return (
             <div>
-              <div>Why isn't the public page working???</div>
+              <div>`Why isn't the public page working???`</div>
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-md-6">

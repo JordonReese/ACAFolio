@@ -149,10 +149,3 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
-
-export const updateNotification = () => {
-  return (
-    type: "UPDATE_NOTIFICATION",
-    value: notifications
-  )
-}
