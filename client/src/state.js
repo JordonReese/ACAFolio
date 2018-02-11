@@ -9,6 +9,7 @@ export default {
   currentProfile:{},
   profiles:[],
   toUserProfile:{}
+
 };
 
 // Data not getting from database to state.  All are empty, headed to reducers.

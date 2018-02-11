@@ -17,10 +17,12 @@ class PublicView extends Component {
   }
 
   componentDidMount() {
-    this.props.loadProfile();
+    console.log("PublicView.CDM.currentProfile", this.props.currentProfile);
+
+    // this.props.loadProfile();
     this.timerID = setInterval(
       () => this.tick(),
-      10000    // this is every 10 sec.
+      60000    // this is every 1 min.
     );
   }
 
@@ -35,10 +37,16 @@ class PublicView extends Component {
   }
 
   render() {
+    console.log("PublicView.render.currentProfile", this.props.currentProfile);
+
     // this.props.loadProfile();
         return (
             <div>
-              <div>Why isn't the public page working???</div>
+              <div>{this.props.currentProfile._id}</div>
+              <div>{this.props.currentProfile.email}</div>
+              <div>{this.props.currentProfile.firstName}</div>
+              <div>{this.props.currentProfile.lastName}</div>
+              <div>{this.props.currentProfile.userHandle}</div>
               <div className="container-fluid">
                 <div className="row">
                   <div className="col-md-6">

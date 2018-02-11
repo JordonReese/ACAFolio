@@ -12,7 +12,7 @@ class SignUp extends Component {
       username: "",
       password: "",
       confirmPassword: "",
-      smhandle:""
+      userHandle:""
     };
   }
 
@@ -24,7 +24,7 @@ class SignUp extends Component {
       confirmPassword: this.state.confirmPassword
     }, {
       userId: "",
-      smhandle: this.state.smhandle,
+      userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.username,
@@ -45,7 +45,7 @@ class SignUp extends Component {
             type="text"
             name="firstName"
             onChange={e => {
-              this.setState({firstName: e.target.value, smhandle:"@"+e.target.value+this.state.lastName[0]});
+              this.setState({firstName: e.target.value, userHandle:"@"+e.target.value+this.state.lastName[0]});
               //this.setState({smhandle: e.target.value});
             }}
             placeholder="Enter first name"
@@ -59,7 +59,7 @@ class SignUp extends Component {
             type="text"
             name="lastName"
             onChange={e => {
-              this.setState({lastName: e.target.value, smhandle: "@"+this.state.firstName+e.target.value[0].toUpperCase()});
+              this.setState({lastName: e.target.value, userHandle: "@"+this.state.firstName+e.target.value[0].toUpperCase()});
             }}
             placeholder="Enter last name"
             value={this.state.lastName}
@@ -109,9 +109,9 @@ class SignUp extends Component {
           <ControlLabel>Social Media Handle</ControlLabel>
           <FormControl
             type="text"
-            name="smhandle"
+            name="userHandle"
             placeholder="auto-generated social media handle"
-            value={this.state.smhandle}
+            value={this.state.userHandle}
             disabled
           />
         </FormGroup>

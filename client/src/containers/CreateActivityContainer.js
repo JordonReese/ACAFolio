@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import {createActivity, updateNotifications, getProfileByUserHandle} from "../actions";
 import CreateActivity from "../components/CreateActivity.js"
 
+
 function mapStateToProps(state){
   // console.log("Container Test", state.toUserProfile)
   return {

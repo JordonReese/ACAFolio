@@ -1,9 +1,11 @@
 import express from "express";
-import { list, show, create, remove, update, updateNotifications, getProfileByUserHandle} from "../controllers/ProfileController";
+import { list, show, create, remove, update, updateNotifications, getProfileByUserHandle, findByEmail} from "../controllers/ProfileController";
+
 const router = express.Router();
 
 router.get("/profiles", list);
 router.get("/profiles/:id", show);
+router.get("/findByEmail/:email", findByEmail);
 router.post("/profiles", create);
 router.delete("/profiles/:id", remove);
 router.get("/notifications/:userHandle", getProfileByUserHandle);
