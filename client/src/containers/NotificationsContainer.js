@@ -4,8 +4,8 @@ import { updateNotification } from "../actions";
 
 function mapStateToProps(state) {
   return {
+    notifications:state.currentProfile.notifications
 
-    notifications: state.currentProfile.notifications
   };
 }
 //     notifications:[

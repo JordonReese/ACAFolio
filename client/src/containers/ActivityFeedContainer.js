@@ -21,8 +21,9 @@ function mapDispatchToProps(dispatch) {
     populateComments: function(comments) {
       dispatch(populateComments(comments));
     }
-    // createNotification: function(id, notifications) {
-    //   dispatch(createNotification(id, notifications));
+    // createNotification: function(notification) {
+    //   console.log("container", notification);
+    //   dispatch(createNotification(notification));
     // }
   }
 }

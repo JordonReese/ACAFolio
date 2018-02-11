@@ -7,8 +7,9 @@ export default {
   actId: null,
   showComments: false,
   currentProfile:{},
-  currentUser: {},
-  profiles:[]
+  profiles:[],
+  toUserProfile:{}
+
 };
 
 // Data not getting from database to state.  All are empty, headed to reducers.
