@@ -8,7 +8,8 @@ function mapStateToProps(state) {
   //sees state object properly but state is empty.
 
   return {
-    activities: state.activities
+    activities: state.activities,
+    currentProfile: state.currentProfile
   };
 }
 

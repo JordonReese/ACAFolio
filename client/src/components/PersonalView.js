@@ -21,7 +21,7 @@ class PersonalView extends Component {
     // this.props.loadActivities();
     this.timerID = setInterval(
       () => this.tick(),
-      10000    // this is every 10 sec.
+      60000    // this is every 10 sec.
     );
   }
 
