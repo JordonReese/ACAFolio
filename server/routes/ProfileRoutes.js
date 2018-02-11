@@ -1,5 +1,7 @@
 import express from "express";
+
 import { list, show, create, remove, update, findByEmail, updateNotifications } from "../controllers/ProfileController";
+
 const router = express.Router();
 
 router.get("/profiles", list);

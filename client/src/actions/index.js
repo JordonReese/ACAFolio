@@ -167,6 +167,7 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
+
 /* NOTIFICATIONS SECTION */
 //create notification
 export function createNotification(tag) {

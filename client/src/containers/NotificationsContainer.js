@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
-import Notifications from "../components/Notifications";
+import Notifications from "../components/Notifications.js";
 import { updateNotification } from "../actions";
 
 function mapStateToProps(state) {
   return {
+
     notifications: state.currentProfile.notifications
   };
 }
@@ -25,10 +26,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateNotification:function(notification){
-      const action = updateNotification(notification);
-      dispatch(action);
-    }
+    // updateNotification:function(notification){
+    //   const action = updateNotification(notification);
+    //   dispatch(action);
+    // }
   };
 }
 
