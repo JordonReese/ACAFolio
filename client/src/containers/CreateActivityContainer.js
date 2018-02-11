@@ -2,10 +2,20 @@ import {connect} from "react-redux";
 import {createActivity} from "../actions";
 import CreateActivity from "../components/CreateActivity.js"
 
+function mapStateToProps(state) {
+  return {
+    currentprofile: state.currentProfile
+  };
+}
+
 function mapDispatchToProps(dispatch){
   return {
     createActivity: (activity)=> {
       dispatch(createActivity(activity));
+    },
+    createNotification: (tags) => {
+      console.log(tags);
+      // distpatch(createNotification(notification));
     }
   };
 }
@@ -17,4 +27,4 @@ function mapDispatchToProps(dispatch){
     // })
 
 
-export default connect(null, mapDispatchToProps)(CreateActivity);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateActivity);

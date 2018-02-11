@@ -4,25 +4,25 @@ import { updateNotification } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    notifications: [{
-                      "userHandle" : "CraigC",
-                      "dateTime" : "Today",
-                      "notification" : " tagged you in a post!"
-                   },
-                   {
-                     "userHandle" : "CamG",
-                      "dateTime" : "Tomorrow",
-                      "notification" : " liked your post!"
 
-                   },
-                   {
-                     "userHandle" : "RenataE",
-                      "dateTime" : "Yesterday",
-                      "notification" : " sent you a message!"
-
-                   }]
+    notifications: state.currentProfile.notifications
   };
 }
+//     notifications:[
+//       {
+//         fromUserHandle:"CamG",
+//         notification: "You have been tagged",
+//         dateTime: "dateTime"
+//       },
+//       {
+//         fromUserHandle:"CamG",
+//         notification: "You have been tagged",
+//         dateTime: "dateTime"
+//       }
+//     ]
+
+//   };
+// }
 
 function mapDispatchToProps(dispatch) {
   return {

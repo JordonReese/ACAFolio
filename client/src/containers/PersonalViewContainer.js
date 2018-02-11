@@ -5,6 +5,12 @@ import { connect } from "react-redux";
 // Activity Feed test
 import { loadActivities } from "../actions";
 
+function mapStateToProps(state) {
+  return {
+    currentProfile: state.currentProfile,
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     loadActivities: function (activity) {
@@ -13,4 +19,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null,mapDispatchToProps)(PersonalView);
+export default connect(mapStateToProps,mapDispatchToProps)(PersonalView);
