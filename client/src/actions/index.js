@@ -44,6 +44,8 @@ function getProfileDone(profile) {
   };
 }
 
+
+
 export function getProfileByUserId(userId) {
   return function (dispatch) {
     fetch(`/profiles/${userId}`)
@@ -55,11 +57,43 @@ export function getProfileByUserId(userId) {
   };
 }
 
+export function getProfileByUserHandle(userHandle){
+  return function(dispatch){
+    return fetch(`/notifications/${userHandle}`)
+    .then((response) =>{
+      return response.json();
+    }).then((profile)=>{
+      dispatch(getToProfileDone(profile))
+      return profile;
+    });
+  };
+}
+
+function getToProfileDone(profile) {
+  console.log(profile);
+  return {
+    type: "GET_TOPROFILE_DONE",
+    value: profile
+  };
+}
+
 export function deleteProfile(id) {
   return function (dispatch) {
     fetch(`/profiles/${id}`, {
       method: "DELETE"
     }).then(() => dispatch(loadProfile()));
+  };
+}
+
+export function updateNotifications(id, arrNotifications) {
+  // console.log("updateComments", actId, arrComments);
+  return function (dispatch) {
+    fetch(`/updateNotifications/${id}`, {
+      method: "PUT",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(arrNotifications)
+    }).then(() => console.log("Notifications Added"));
   };
 }
 
@@ -149,26 +183,27 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
+
+
 /* NOTIFICATIONS SECTION */
 //create notification
-export function createNotification(tag) {
-  return function(dispatch) {
-    fetch(`/users/${tag}`, {
-      method: "POST",
-      headers: {"Accept":"application/json",
-                "Content-Type":"application/json"},
-      body: JSON.stringify(tag)
-    })//.then(()=> dispatch(pushNotification()));
-  };
-}
+// export function createNotification(userHandle) {
+//   return function(dispatch) {
+//     fetch(`/profiles/${userHandle}`, {
+//       method: "PUT",
+//       headers: {"Accept":"application/json",
+//                 "Content-Type":"application/json"},
+//       body: JSON.stringify(userHandle)
+//     })//.then(()=> dispatch(pushNotification()));
+//   };
+// }
 
 // export function loadNotifications() {
 //
 // }
-export const updateNotification = () => {
-  return (
-    type: "UPDATE_NOTIFICATION",
-    value: notifications
-  )
-}
-
+// export const updateNotification = () => {
+//   return (
+//     type: "UPDATE_NOTIFICATION",
+//     value: notifications
+//   )
+// }

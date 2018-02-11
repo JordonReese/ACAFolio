@@ -1,16 +1,28 @@
 import {connect} from "react-redux";
-import {createActivity} from "../actions";
+import {createActivity, updateNotifications, getProfileByUserHandle} from "../actions";
 import CreateActivity from "../components/CreateActivity.js"
 
+function mapStateToProps(state){
+  // console.log("Container Test", state.toUserProfile)
+  return {
+    toUserProfile: state.toUserProfile
+  }
+}
 function mapDispatchToProps(dispatch){
   return {
     createActivity: (activity)=> {
       dispatch(createActivity(activity));
     },
-    createNotification: (tags) => {
-      console.log(tags);
-      // distpatch(createNotification(notification));
+    getProfileByUserHandle: (userHandle)=>{
+      return dispatch(getProfileByUserHandle(userHandle));
+    },
+    updateNotifications: (profileId, arrNotifications)=>{
+      dispatch(updateNotifications(profileId, arrNotifications));
     }
+
+    // createNotification: (tags) => {
+    //   console.log(tags);
+      // distpatch(createNotification(notification));
   };
 }
     // createActivity: function(activity => {
@@ -21,4 +33,4 @@ function mapDispatchToProps(dispatch){
     // })
 
 
-export default connect(null, mapDispatchToProps)(CreateActivity);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateActivity);

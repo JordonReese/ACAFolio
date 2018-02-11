@@ -16,8 +16,16 @@ function profiles(state = [], action) {
 }
 
 //reducer for the state of profiles. It is needed to get the information out of the state
-function profile(state = [], action) {
+function currentProfile(state = [], action) {
   if (action.type === "GET_PROFILE_DONE") {
+   return action.value;
+ }
+  return state;
+}
+
+function toUserProfile(state = {}, action) {
+  if (action.type === "GET_TOPROFILE_DONE") {
+    console.log("reducer", action.value);
    return action.value;
  }
   return state;
@@ -55,8 +63,8 @@ function activities(state = [], action) {
 
 const rootReducer = combineReducers({
   notifications
-  , profiles, profile
-  , activities
+  , profiles, currentProfile
+  , activities, toUserProfile
   // , comments, actComments, comment, actComments
 });
 

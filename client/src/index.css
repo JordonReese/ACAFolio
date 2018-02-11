@@ -444,3 +444,9 @@ video{
   transform: scale(1.5);
   text-decoration: none;
 }
+
+/*DROPDOWN SECTION*/
+
+.navDropDown {
+  width:400px;
+}
