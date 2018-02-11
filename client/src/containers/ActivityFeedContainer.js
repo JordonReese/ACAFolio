@@ -4,9 +4,6 @@ import {deleteActivity, updateActivity, populateComments, createNotification} fr
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {
-
-  //sees state object properly but state is empty.
-
   return {
     activities: state.activities,
     currentProfile: state.currentProfile

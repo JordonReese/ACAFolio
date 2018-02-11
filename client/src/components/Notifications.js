@@ -4,54 +4,48 @@ import { NavDropdown, MenuItem } from "react-bootstrap";
 
 
 class Notifications extends Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        fromUserHandle: "Jordon",
-        notification: "has commented on your post!",
-        dateTime: new Date(),
-        visible: true,
-        notificationNumber: 4
-      }
+  constructor(props){
+    super(props);
+    this.state = {
+      fromUserHandle: "Jordon",
+      notification: "has commented on your post!",
+      dateTime: new Date(),
+      visible: true,
+      notificationNumber: 4
     }
+  }
 
-    handleClick(event, ACTION, notificationArray, notificationId) {
-      event.preventDefault();
-      switch(ACTION) {
-        case "DELETE":
-          notificationArray.splice(notificationId, 1);
-          this.props.updateNotifications(this.props.notificationId)
+  handleClick(event, ACTION, notificationArray, notificationId) {
+    event.preventDefault();
+    switch(ACTION) {
+      case "DELETE":
+        notificationArray.splice(notificationId, 1);
+        this.props.updateNotifications(this.props.notificationId)
     }
-
-
 
   }
 
+  render() {
+  function displayNotifications() {
+    // while(this.state.notificationNumber > 0) {
+    return (
+      <NavDropdown title="Notifications">
+        <MenuItem href="#">Notif 1</MenuItem>
+        <MenuItem divider />
+        <MenuItem href="#">Notif 2</MenuItem>
+      </NavDropdown>
+    );
+  }
+  // }
 
+  return (
+    <div>
+      {displayNotifications()}
+    </div>
+    )
 
-
-
-    render(){
-    function displayNotifications() {
-      while(this.state.notificationNumber > 0){
-          <NavDropdown title="Notifications">
-            <MenuItem href="#">Notif 1</MenuItem>
-            <MenuItem divider />
-            <MenuItem href="#">Notif 2</MenuItem>
-          </NavDropdown>
-        }
-      }
-
-
-      return (
-        {displayNotifications}
-        )
-      }
-
-
-}
-
-
+  }  // renderApp
+}  // class
 
 export default Notifications;
 

@@ -183,10 +183,9 @@ export function createNotification(tag) {
 // export function loadNotifications() {
 //
 // }
-export const updateNotification = () => {
-  return (
+export const updateNotification = (notifications) => {
+  return {
     type: "UPDATE_NOTIFICATION",
     value: notifications
-  )
+  }
 }
-
