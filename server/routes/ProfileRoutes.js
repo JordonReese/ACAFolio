@@ -7,6 +7,7 @@ router.get("/profiles/:id", show);
 router.get("/findByEmail/:email", findByEmail);
 router.post("/profiles", create);
 router.delete("/profiles/:id", remove);
+router.put("notifications/:id", updateNotifications);
 // router.update("/profile/:id", update);
 
 

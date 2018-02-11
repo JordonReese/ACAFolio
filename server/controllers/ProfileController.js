@@ -47,3 +47,10 @@ export function remove(request, response) {
     return response.send("You have deleted a Profile.");
   });
 }
+
+export const updateNotifications = (request, response) => {
+  ProfileMode.update({_id: request.params.id},{notifications: request.body})
+  .then(result => {
+    return response.send("You have updated a notification");
+  });
+}

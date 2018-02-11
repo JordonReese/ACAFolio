@@ -167,3 +167,26 @@ export function updateComments(actId, arrComments) {
     }).then(() => dispatch(loadActivities()));
   };
 }
+/* NOTIFICATIONS SECTION */
+//create notification
+export function createNotification(tag) {
+  return function(dispatch) {
+    fetch(`/users/${tag}`, {
+      method: "POST",
+      headers: {"Accept":"application/json",
+                "Content-Type":"application/json"},
+      body: JSON.stringify(tag)
+    })//.then(()=> dispatch(pushNotification()));
+  };
+}
+
+// export function loadNotifications() {
+//
+// }
+export const updateNotification = () => {
+  return (
+    type: "UPDATE_NOTIFICATION",
+    value: notifications
+  )
+}
+
