@@ -8,7 +8,7 @@ import {createProfile} from "../actions";
 function mapStateToProps(state) {
   return {
     currentProfile: state.currentProfile
-  }
+  };
 }
 
 

@@ -7,7 +7,7 @@ import {deleteProfile} from "../actions";
 function mapStateToProps(state) {
   return {
     currentprofile: state.currentProfile
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {

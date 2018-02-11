@@ -4,11 +4,8 @@ import Comments from "../components/Comments";
 import { update, updateComments } from "../actions";
 
 function mapStateToProps(state) {
-
-  //sees state object properly but state is empty.
-
   return {
-
+    currentprofile: state.currentProfile
   };
 }
 
