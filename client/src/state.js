@@ -7,6 +7,7 @@ export default {
   actId: null,
   showComments: false,
   currentProfile:{},
+  currentUser: {},
   profiles:[]
 };
 

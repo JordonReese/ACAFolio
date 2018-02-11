@@ -1,6 +1,6 @@
 import UserModel from "../models/UserModel";
 
-//List Profile
+//List User
 export function list(request, response) {
   UserModel.find({}).exec()
   .then(users => {
@@ -8,10 +8,10 @@ export function list(request, response) {
   });
 }
 
-//Show Profile
+//Find the user by email.  Used to get id for the profile.
 export function findByEmail(request, response)
 {
-   UserModel.findOne({email: request.params.email}).exec()
+   UserModel.find({ email: request.params.email }).exec()
    .then(user => {
      return response.json(user);
    });
