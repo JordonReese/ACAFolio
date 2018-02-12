@@ -4,22 +4,22 @@ import { updateNotification } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    notifications:state.currentProfile.notifications
+    // notifications:state.currentProfile.notifications
+        notifications:[
+          {
+            fromUserHandle:"CamG",
+            notification: "You have been tagged",
+            dateTime: "dateTime"
+          },
+          {
+            fromUserHandle:"CamG",
+            notification: "You have been tagged",
+            dateTime: "dateTime"
+          }
+        ]
 
   };
 }
-//     notifications:[
-//       {
-//         fromUserHandle:"CamG",
-//         notification: "You have been tagged",
-//         dateTime: "dateTime"
-//       },
-//       {
-//         fromUserHandle:"CamG",
-//         notification: "You have been tagged",
-//         dateTime: "dateTime"
-//       }
-//     ]
 
 //   };
 // }
