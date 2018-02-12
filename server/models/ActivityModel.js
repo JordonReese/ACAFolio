@@ -28,10 +28,6 @@ const schema = new mongoose.Schema({
   comments: {
     type: Array,
     required: false
-  },
-  showComments: {
-    type: Boolean,
-    required: false
   }
 });
 

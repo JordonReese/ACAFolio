@@ -17,6 +17,15 @@ export function show(request, response)
    });
 }
 
+//Find the user by email.  Used to get id for the profile.
+export function findByEmail(request, response)
+{
+   ProfileModel.findOne({ email: request.params.email }).exec()
+   .then(profile => {
+     return response.json(profile);
+   });
+}
+
 //Create Profile
 export function create(request, response) {
    const profile = new ProfileModel(request.body);
@@ -36,5 +45,19 @@ export function remove(request, response) {
   ProfileModel.remove({_id: request.params.id})
   .then(profile => {
     return response.send("You have deleted a Profile.");
+  });
+}
+
+export function getProfileByUserHandle(request, response){
+   ProfileModel.findOne({userHandle: request.params.userHandle}).exec()
+   .then(profile => {
+     return response.json(profile);
+   });
+}
+
+export function updateNotifications(request, response) {
+  ProfileModel.update({_id: request.params.id},{notifications: request.body})
+  .then(result => {
+    return response.send("You have updated a notification");
   });
 }
