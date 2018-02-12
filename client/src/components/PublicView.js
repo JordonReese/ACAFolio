@@ -18,8 +18,6 @@ class PublicView extends Component {
 
   componentDidMount() {
     console.log("PublicView.CDM.currentProfile", this.props.currentProfile);
-
-    // this.props.loadProfile();
     this.timerID = setInterval(
       () => this.tick(),
       20000    // this is every 1 min.
