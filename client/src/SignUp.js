@@ -23,7 +23,7 @@ class SignUp extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     }, {
-      userId: this.state.userID,
+      userId: "",
       userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,

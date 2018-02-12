@@ -18,10 +18,20 @@ class PersonalView extends Component {
   }
 
   componentDidMount() {
+    const myEmail = localStorage.getItem("email")
+    // console.log("Personal View.CDM.my email", myEmail, this.state);
+    // if (this.state.userEmail) {
+      // this.props.getProfileByEmail(myEmail);
+      // this.setState({
+      //   userHandle: this.props.currentProfile.userHandle,
+      //   location: this.props.currentProfile.location
+      // });
+      // console.log("Personal View.CDM.State", myEmail, this.state, this.props);
+    // }
     // this.props.loadActivities();
     this.timerID = setInterval(
       () => this.tick(),
-      10000    // this is every 10 sec.
+      20000    // this is every 10 sec.
     );
   }
 

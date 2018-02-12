@@ -3,15 +3,15 @@ export function loadProfile() {
     fetch("/profiles")
     .then((response) => {
       return response.json();
-    }).then((profile) => {
-      dispatch(profileLoaded(profile));
+    }).then((profiles) => {
+      dispatch(profileLoaded(profiles));
     });
   };
 }
-export function profileLoaded(profile) {
+function profileLoaded(profiles) {
   return {
     type: "PROFILES_LOADED",
-    value: profile
+    value: profiles
   };
 }
 
@@ -22,7 +22,10 @@ export function createProfile(profile) {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(profile)
-    }).then(() => console.log("profile saved"));
+    }).then(() => {
+      console.log("actions.createProfile", profile);
+      // dispatch(getProfileByEmail(profile.email));
+    });
     // }).then(() => dispatch(loadProfile()));
   };
 }
@@ -37,12 +40,16 @@ export function getProfile(id) {
     });
   };
 }
+
 function getProfileDone(profile) {
+  console.log("actions.get profile done", profile);
   return {
     type: "GET_PROFILE_DONE",
     value: profile
   };
 }
+
+
 
 export function getProfileByUserId(userId) {
   return function (dispatch) {
@@ -52,6 +59,37 @@ export function getProfileByUserId(userId) {
     }).then((profile) => {
       dispatch(getProfileDone(profile));
     });
+  };
+}
+
+export function getProfileByUserHandle(userHandle){
+  return function(dispatch){
+    return fetch(`/notifications/${userHandle}`)
+    .then((response) =>{
+      return response.json();
+    }).then((profile)=>{
+      dispatch(getToProfileDone(profile))
+      return profile;
+     });
+  };
+}
+
+export function getProfileByEmail(email) {
+  return function (dispatch) {
+    fetch(`/findByEmail/${email}`)
+    .then( (response) => {
+      return response.json();
+    }).then((profile) => {
+      dispatch(getProfileDone(profile));
+    });
+  };
+}
+
+function getToProfileDone(profile) {
+  console.log(profile);
+  return {
+    type: "GET_TOPROFILE_DONE",
+    value: profile
   };
 }
 
@@ -72,12 +110,12 @@ export function updateProfile(userId, profile) {
       body: JSON.stringify(profile)
     }).then(() => dispatch(loadProfile()));
   };
-}
+}  
 
 /* User Section */
 export function getUserByEmail(email) {
   return function (dispatch) {
-    fetch(`/profiles/${email}`)
+    fetch(`/users/${email}`)
     .then( (response) => {
       return response.json();
     }).then((user) => {
@@ -86,6 +124,7 @@ export function getUserByEmail(email) {
   };
 }
 function getUserDone(user) {
+  console.log("get user done", user);
   return {
     type: "GET_USER_DONE",
     value: user
@@ -159,4 +198,40 @@ export function updateComments(actId, arrComments) {
       body: JSON.stringify(arrComments)
     }).then(() => dispatch(loadActivities()));
   };
+}
+
+/* NOTIFICATIONS SECTION */
+//create notification
+// export function createNotification(userHandle) {
+//   return function(dispatch) {
+//     fetch(`/profiles/${userHandle}`, {
+//       method: "PUT",
+//       headers: {"Accept":"application/json",
+//                 "Content-Type":"application/json"},
+//       body: JSON.stringify(userHandle)
+//     })//.then(()=> dispatch(pushNotification()));
+//   };
+// }
+
+// export function loadNotifications() {
+//
+// }
+
+export function updateNotifications(id, arrNotifications) {
+  // console.log("updateComments", actId, arrComments);
+  return function (dispatch) {
+    fetch(`/updateNotifications/${id}`, {
+      method: "PUT",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(arrNotifications)
+    }).then(() => console.log("Notifications Added"));
+  };
+}
+
+export const updateNotification = (notifications) => {
+  return {
+    type: "UPDATE_NOTIFICATION",
+    value: notifications
+  }
 }

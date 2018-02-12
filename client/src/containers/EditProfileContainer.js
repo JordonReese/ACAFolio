@@ -5,11 +5,12 @@ import { connect } from "react-redux";
 import EditProfile from "../components/EditProfile";
 import {createProfile} from "../actions";
 
-// function mapStateToProps(state) {
-//   return {
-//
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    currentProfile: state.currentProfile
+  };
+}
+
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -19,4 +20,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null,mapDispatchToProps)(ProfileCreation);
+export default connect(mapStateToProps,mapDispatchToProps)(ProfileCreation);

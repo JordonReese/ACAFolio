@@ -5,7 +5,7 @@ import {deleteProfile, updateProfile} from "../actions";
 
 function mapStateToProps(state) {
   return {
-    profile: state.profile
+    currentprofile: state.currentProfile
   };
 }
 

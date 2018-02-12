@@ -12,11 +12,25 @@ class App extends Component {
     super();
     this.state = {
       signUpSignInError: "",
-      authenticated: localStorage.getItem("token") || false
+      authenticated: localStorage.getItem("token") || false,
+      userEmail:localStorage.getItem("email") || false
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
+
+  }
+
+  componentDidMount() {
+    console.log("App.CDM.local storage email", this.state.userEmail);
+    // if (localStorage.getItem("profile")) {
+    //   this.props.getProfileDone(localStorage.getItem("profile"))
+    // }
+    // if (this.state.userEmail) {
+    //   this.props.getProfileByEmail(this.state.userEmail);
+    //   console.log("CDM.if stmt", this.props.currentProfile);
+    //
+    // }
   }
 
   handleSignUp(credentials, profile) {
@@ -47,14 +61,27 @@ class App extends Component {
         }
         const { token } = data;
         localStorage.setItem("token", token);
+        localStorage.setItem("email", username);
         this.setState({
           signUpSignInError: "",
-          authenticated: token
+          authenticated: token,
+          userEmail: username
         });
       })
         .then(()=> {
-        console.log("handleSignUp", profile);
-        this.props.createProfile(profile);
+          // this.props.getUserByEmail(profile.email);
+          // console.log("currentUser", this.props.currentUser);
+          // profile.UserId = this.props.currentUser._id;
+          console.log("handleSignUp", profile);
+          this.props.createProfile(profile);
+      })
+        .then(()=> {
+          // getProfileByEmail sets currentProfile in application state
+          this.props.getProfileByEmail(username)
+          .then((profile)=> {console.log("in .then", profile);});
+      }).then(()=> {
+        console.log("handleSignUp", this.props.currentProfile);
+        // localStorage.setItem("profile", this.props.currentProfile);
       });
     }
   }
@@ -81,16 +108,25 @@ class App extends Component {
       }).then((data) => {
         const { token } = data;
         localStorage.setItem("token", token);
+        localStorage.setItem("email", username);
         this.setState({
           signUpSignInError: "",
-          authenticated: token
+          authenticated: token,
+          userEmail: username
         });
+      }).then(()=> {
+          // getProfileByEmail sets currentProfile in application state
+          this.props.getProfileByEmail(username);
+      }).then(()=> {
+        console.log("currentProfile", this.props.currentProfile);
+        localStorage.setItem("profile", this.props.currentProfile);
       });
     }
   }
 
   handleSignOut() {
     localStorage.removeItem("token");
+    localStorage.removeItem("profile");
     this.setState({
       authenticated: false
     });
@@ -110,8 +146,8 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/public" component={PublicViewContainer} />
-          <Route path="/" component={PersonalViewContainer} />
+          <Route path="/public" render={()=> <PublicViewContainer email={this.props.currentProfile.email} />} />
+          <Route path="/" render={()=> <PersonalViewContainer email={this.props.currentProfile.email} />} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>
       </div>
@@ -141,4 +177,5 @@ class App extends Component {
 
 export default App;
 
-// () => <h1>I am protected!</h1>
+// <Route path="/public" component={PublicViewContainer} />
+// <Route path="/" component={PersonalViewContainer} />

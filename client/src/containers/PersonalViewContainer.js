@@ -3,14 +3,23 @@ import PersonalView from "../components/PersonalView";
 import { connect } from "react-redux";
 
 // Activity Feed test
-import { loadActivities } from "../actions";
+import { loadActivities, getProfileByEmail } from "../actions";
+
+function mapStateToProps(state) {
+  return {
+    currentProfile: state.currentProfile,
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return {
     loadActivities: function (activity) {
       dispatch(loadActivities(activity));
+    },
+    getProfileByEmail: function (email) {
+    dispatch(getProfileByEmail(email));
     }
   };
 }
 
-export default connect(null,mapDispatchToProps)(PersonalView);
+export default connect(mapStateToProps,mapDispatchToProps)(PersonalView);
