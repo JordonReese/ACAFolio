@@ -108,6 +108,8 @@ export function updateProfile(userId, profile) {
                 "Content-Type": "application/json"},
       body: JSON.stringify(profile)
     }).then(() => dispatch(loadProfile()));
+  }
+}
 
 export function updateNotifications(id, arrNotifications) {
   // console.log("updateComments", actId, arrComments);
@@ -234,4 +236,3 @@ export const updateNotification = (notifications) => {
     value: notifications
   }
 }
-
