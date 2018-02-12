@@ -48,8 +48,15 @@ export function remove(request, response) {
   });
 }
 
-export const updateNotifications = (request, response) => {
-  ProfileMode.update({_id: request.params.id},{notifications: request.body})
+export function getProfileByUserHandle(request, response){
+   ProfileModel.findOne({userHandle: request.params.userHandle}).exec()
+   .then(profile => {
+     return response.json(profile);
+   });
+}
+
+export function updateNotifications(request, response) {
+  ProfileModel.update({_id: request.params.id},{notifications: request.body})
   .then(result => {
     return response.send("You have updated a notification");
   });
