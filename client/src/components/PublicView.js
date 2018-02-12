@@ -1,25 +1,23 @@
+//Comparing to PersonalView
+
 import React, { Component } from "react";
-// import "./App.css";
-// import Main from "./components/Main";
-// import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-// import AddressContainer from "./containers/AddressContainer";
-// import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 import ProfileDetailContainer from "../containers/ProfileDetailContainer";
 import EditProfileContainer from "../containers/ProfileDetailContainer";
-import ActivityFeedContainer from "../containers/ActivityFeedContainer";
+// import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 
 
 class PublicView extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {
+    currentProfile:{},
+    date: new Date()
   }
+}
 
   componentDidMount() {
     console.log("PublicView.CDM.currentProfile", this.props.currentProfile);
-
-    // this.props.loadProfile();
     this.timerID = setInterval(
       () => this.tick(),
       20000    // this is every 1 min.
@@ -59,7 +57,12 @@ class PublicView extends Component {
                   </div> */}
                 </div>
               </div>
-             </div>
+              {/* <div className="col-md-6">
+                <ProfileDetailContainer />
+              </div> */}
+            </div>
+          </div>
+         </div>
         );
       }
     }

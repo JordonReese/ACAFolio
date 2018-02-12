@@ -119,7 +119,7 @@ class CreateActivity extends Component {
           placeholder="What's Good...?"
           onChange={(e) => {this.setState({post:e.target.value, dateTime: this.formatDate(new Date())})}}
         />
-        <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
+      <button className="activityEntryButton" type='submit' onClick={(e)=> {
             e.preventDefault();
             // this.setState({
             //   userHandle: this.props.currentProfile.userHandle,

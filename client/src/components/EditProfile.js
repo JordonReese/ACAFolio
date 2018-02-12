@@ -1,29 +1,30 @@
-//import React from "react";
-//import {Link} from "react-router-dom";
+//Comparing to CreateActivity.js
+
 import React, { Component } from "react";
-import { createProfile } from "../actions";
-// import PropTypes from "prop-types";
+// import { createProfile } from "../actions";
 import { FormGroup, ControlLabel, FormControl, Button } from "react-bootstrap";
 
-class ProfileCreation extends Component {
-  constructor() {
-    super();
+class EditProfile extends Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
-      smhandle:"",
-      firstName: "",
-      lastName: "",
-      email: "",
-      birthday:"",
-      cityState:"",
-      bio:""
-    };
-  }
+      currentProfile:{
+      userHandle:"@CodeIsC",
+      firstName: "CodeIs",
+      lastName: "Cool",
+      email: "codeiscool@gmail.com",
+      birthday:"2/14/2000",
+      cityState:"Austin, TX",
+      bio:"#CodeIsLife"
+    }
+  };
+}
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onEdit({
-      smhandle: this.state.smhandle,
+    this.props.onSignUp({
+      userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
@@ -67,12 +68,12 @@ class ProfileCreation extends Component {
         <ControlLabel>Social Media Handle</ControlLabel>
         <FormControl
           type="text"
-          name="smhandle"
+          name="userHandle"
           onChange={e => {
             this.setState({[e.target.name]: e.target.value});
           }}
           placeholder="Enter handle, Ex: @CodingRocks"
-          value={this.state.smhandle}
+          value={this.state.userHandle}
         />
       </FormGroup>
 
@@ -124,4 +125,4 @@ class ProfileCreation extends Component {
   }
 }
 
-export default ProfileCreation;
+export default EditProfile;

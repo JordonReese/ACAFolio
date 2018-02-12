@@ -1,8 +1,7 @@
-/*
-Used to show detials on profile:
-FirstName, LastName, Birthday, profileName, Email, ACAID, Password
-*/
-import React from "react";
+//Comparing to ActivityFeed.js
+
+
+import React, { Component } from "react";
 // import {Link} from "react-router-dom";
 // import PropTypes from "prop-types";
 
@@ -12,7 +11,7 @@ const profileDivs = props.profiles.map(function(profile){
   return
   <div>
     <ul>
-    <ol>{this.props.profile.smhandle}</ol>
+    <ol>{this.props.profile.userHandle}</ol>
     <ol>{this.props.profile.firstName}</ol>
     <ol>{this.props.profile.lastName}</ol>
     <ol>{this.props.profile.email}</ol>
