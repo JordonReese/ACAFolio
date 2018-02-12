@@ -22,7 +22,7 @@ class PublicView extends Component {
     // this.props.loadProfile();
     this.timerID = setInterval(
       () => this.tick(),
-      60000    // this is every 1 min.
+      20000    // this is every 1 min.
     );
   }
 

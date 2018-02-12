@@ -71,6 +71,11 @@ export function getProfileByEmail(email) {
   };
 }
 
+// , {
+//   method: "GET",
+//   headers: {"Authorization": localStorage.getItem("token")}
+// }
+
 export function deleteProfile(id) {
   return function (dispatch) {
     fetch(`/profiles/${id}`, {

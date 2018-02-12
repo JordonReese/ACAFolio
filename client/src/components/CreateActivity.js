@@ -8,15 +8,37 @@ class ActivityEntry extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userHandle: "Cam G",
+      userId: "",
+      userHandle: this.props.currentProfile.userHandle||"",
       post:"",
-      dateTime: '',
-      location:"Austin",
+      dateTime: "",
+      location: this.props.currentProfile.location||"",
       likesCount: 0,
+      comments: [],
       handleTags: []
     }
   }
+
+  componentDidMount = ()=> {
+    const myEmail = localStorage.getItem("email")
+    console.log("createActivity.CDM.my email", myEmail);
+    if (myEmail) {
+      this.props.getProfileByEmail(myEmail);
+      // .then((profile)=> {
+      //   this.setState({
+      //     userHandle: this.props.currentProfile.userHandle,
+      //     location: this.props.currentProfile.location
+      //   }, ()=> console.log("CDM.state set is complete"));
+      // });
+      console.log("createActivity.CDM.afterGetProfile call", myEmail, this.state, this.props);
+
+    }  // if statement
+  }  // componentDidMount
+
+
   render() {
+    console.log("Render.props", this.props.currentProfile, this.state);
+
     function formatDate(date) {
       var monthNames = [
         "January", "February", "March",
@@ -34,8 +56,8 @@ class ActivityEntry extends Component {
 
 
     return (
-      <div className="createActivity">
 
+      <div className="createActivity">
         <textarea
           value={this.state.post}
           className="activityInput"
@@ -57,7 +79,22 @@ class ActivityEntry extends Component {
         />
         <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
             e.preventDefault();
-            this.props.createActivity(this.state);
+            // this.setState({
+            //   userHandle: this.props.currentProfile.userHandle,
+            //   location: this.props.currentProfile.location
+            // }, ()=> console.log("Click.state set is complete"));
+
+            this.props.createActivity(
+              {
+                userId: "",
+                userHandle: this.props.currentProfile.userHandle||"",
+                post:this.state.post,
+                dateTime: this.state.dateTime,
+                location: this.props.currentProfile.location||"",
+                likesCount: 0,
+                comments: []
+              }
+            );
             this.props.createNotification(this.state.handleTags);
             this.setState({post:""});
             }

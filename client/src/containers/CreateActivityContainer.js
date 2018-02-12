@@ -1,10 +1,10 @@
 import {connect} from "react-redux";
-import {createActivity} from "../actions";
+import { createActivity, getProfileByEmail } from "../actions";
 import CreateActivity from "../components/CreateActivity.js"
 
 function mapStateToProps(state) {
   return {
-    currentprofile: state.currentProfile
+    currentProfile: state.currentProfile
   };
 }
 
@@ -16,6 +16,9 @@ function mapDispatchToProps(dispatch){
     createNotification: (tags) => {
       console.log(tags);
       // distpatch(createNotification(notification));
+    },
+    getProfileByEmail: function (email) {
+    dispatch(getProfileByEmail(email));
     }
   };
 }

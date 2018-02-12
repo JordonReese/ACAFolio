@@ -18,15 +18,19 @@ class App extends Component {
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
+
   }
 
   componentDidMount() {
-    console.log("local storage email", this.state.userEmail);
-
-    if (this.state.userEmail) {
-      this.props.getProfileByEmail(this.state.userEmail);
-    }
-
+    console.log("App.CDM.local storage email", this.state.userEmail);
+    // if (localStorage.getItem("profile")) {
+    //   this.props.getProfileDone(localStorage.getItem("profile"))
+    // }
+    // if (this.state.userEmail) {
+    //   this.props.getProfileByEmail(this.state.userEmail);
+    //   console.log("CDM.if stmt", this.props.currentProfile);
+    //
+    // }
   }
 
   handleSignUp(credentials, profile) {
@@ -73,9 +77,11 @@ class App extends Component {
       })
         .then(()=> {
           // getProfileByEmail sets currentProfile in application state
-          this.props.getProfileByEmail(username);
-          console.log("currentProfile", this.props.currentProfile);
-
+          this.props.getProfileByEmail(username)
+          .then((profile)=> {console.log("in .then", profile);});
+      }).then(()=> {
+        console.log("handleSignUp", this.props.currentProfile);
+        // localStorage.setItem("profile", this.props.currentProfile);
       });
     }
   }
@@ -111,7 +117,9 @@ class App extends Component {
       }).then(()=> {
           // getProfileByEmail sets currentProfile in application state
           this.props.getProfileByEmail(username);
-          console.log("currentProfile", this.props.currentProfile);
+      }).then(()=> {
+        console.log("currentProfile", this.props.currentProfile);
+        localStorage.setItem("profile", this.props.currentProfile);
       });
     }
   }
