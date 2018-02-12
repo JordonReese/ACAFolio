@@ -84,7 +84,6 @@ export function getProfileByEmail(email) {
   };
 }
 
-
 function getToProfileDone(profile) {
   console.log(profile);
   return {

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ActivityFeed from "../components/ActivityFeed";
-import {deleteActivity, updateActivity, populateComments, createNotification} from "../actions";
+import {deleteActivity, updateActivity, populateComments, createNotification, getProfileByEmail } from "../actions";
 // import { deleteAddress } from "../actions";
 
 function mapStateToProps(state) {

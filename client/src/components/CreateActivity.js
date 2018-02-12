@@ -8,15 +8,36 @@ class CreateActivity extends Component {
     super(props);
     console.log("constructor props",this.props);
     this.state = {
-      userHandle: "Cam G",
+      userId: "",
+      userHandle: this.props.currentProfile.userHandle||"",
       post:"",
-      dateTime: '',
-      location:"Austin",
+      dateTime: "",
+      location: this.props.currentProfile.location||"",
       likesCount: 0,
-      handleTags: [],
-      profileId: null
+      comments: [],
+      handleTags: []
     }
   }
+
+  componentDidMount = ()=> {
+    const myEmail = localStorage.getItem("email")
+    console.log("createActivity.CDM.my email", myEmail);
+    if (myEmail) {
+      this.props.getProfileByEmail(myEmail);
+      // .then((profile)=> {
+      //   this.setState({
+      //     userHandle: this.props.currentProfile.userHandle,
+      //     location: this.props.currentProfile.location
+      //   }, ()=> console.log("CDM.state set is complete"));
+      // });
+      console.log("createActivity.CDM.afterGetProfile call", myEmail, this.state, this.props);
+
+    }  // if statement
+  }  // componentDidMount
+
+
+  render() {
+    console.log("Render.props", this.props.currentProfile, this.state);
 
   formatDate(date) {
     var monthNames = [
@@ -89,8 +110,8 @@ class CreateActivity extends Component {
     // }
     console.log("componentToUserProfileinRender", this.props.toUserProfile);
     return (
-      <div className="createActivity">
 
+      <div className="createActivity">
         <textarea
           value={this.state.post}
           className="activityInput"
@@ -100,7 +121,22 @@ class CreateActivity extends Component {
         />
         <button className="activityEntryButton" type='sumbit' onClick={(e)=> {
             e.preventDefault();
-            this.props.createActivity(this.state);
+            // this.setState({
+            //   userHandle: this.props.currentProfile.userHandle,
+            //   location: this.props.currentProfile.location
+            // }, ()=> console.log("Click.state set is complete"));
+
+            this.props.createActivity(
+              {
+                userId: "",
+                userHandle: this.props.currentProfile.userHandle||"",
+                post:this.state.post,
+                dateTime: this.state.dateTime,
+                location: this.props.currentProfile.location||"",
+                likesCount: 0,
+                comments: []
+              }
+            );
             this.handleNotifications();
             this.setState({post:""});
 

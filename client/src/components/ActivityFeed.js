@@ -9,9 +9,10 @@ class ActivityFeed extends Component {
     super(props);
     this.state = {
       editKey: -1,
-      post: ""
+      post: "",
     }
   }
+
   //props activities exists, but empty...
   render(){
 
@@ -24,7 +25,7 @@ class ActivityFeed extends Component {
             <div key={key} className="activityPost">
               <a href='#' className="activityName">{activity.userHandle}</a>
               <h6 className="activityMessage">{activity.post}</h6>
-              <p className="activityDate">{activity.dateTime}</p>
+              <p className="activityDate">{activity.dateTime} {activity.location}</p>
               <a className="activityEdit" onClick={(e) => {
                   e.preventDefault();
                   this.setState({editKey: key });
