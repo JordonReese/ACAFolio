@@ -23,7 +23,7 @@ class SignUp extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     }, {
-      userId: "",
+      userId: this.state.userID,
       userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -46,7 +46,7 @@ class SignUp extends Component {
             name="firstName"
             onChange={e => {
               this.setState({firstName: e.target.value, userHandle:"@"+e.target.value+this.state.lastName[0]});
-              //this.setState({smhandle: e.target.value});
+              //this.setState({userHandle: e.target.value});
             }}
             placeholder="Enter first name"
             value={this.state.firstName}

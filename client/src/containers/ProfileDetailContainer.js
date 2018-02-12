@@ -1,8 +1,6 @@
 import { connect } from "react-redux";
 import ProfileDetail from "../components/ProfileDetail";
-import { deleteProfile, getProfileByEmail } from "../actions";
-
-// import { deleteAddress } from "../actions";
+import { deleteProfile, updateProfile, getProfileByEmail } from "../actions";
 
 function mapStateToProps(state) {
   return {
@@ -17,6 +15,9 @@ function mapDispatchToProps(dispatch) {
     },
     getProfileByEmail: function (email) {
       dispatch(getProfileByEmail(email));
+    },
+    updateProfile: function(id, post) {
+      dispatch(updateProfile(id, post));
     }
   }
 }

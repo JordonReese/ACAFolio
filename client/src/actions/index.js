@@ -100,6 +100,15 @@ export function deleteProfile(id) {
   };
 }
 
+export function updateProfile(userId, profile) {
+  return function (dispatch) {
+    fetch(`/profile/${userId}`, {
+      method: "PUT",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(profile)
+    }).then(() => dispatch(loadProfile()));
+
 export function updateNotifications(id, arrNotifications) {
   // console.log("updateComments", actId, arrComments);
   return function (dispatch) {
@@ -109,6 +118,7 @@ export function updateNotifications(id, arrNotifications) {
                 "Content-Type": "application/json"},
       body: JSON.stringify(arrNotifications)
     }).then(() => console.log("Notifications Added"));
+
   };
 }
 
