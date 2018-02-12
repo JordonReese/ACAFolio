@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import ProfileDetailContainer from "../containers/ProfileDetailContainer";
 import EditProfileContainer from "../containers/ProfileDetailContainer";
-// import ActivityFeedContainer from "../containers/ActivityFeedContainer";
+import ActivityFeedContainer from "../containers/ActivityFeedContainer";
 
 
 class PublicView extends Component {
