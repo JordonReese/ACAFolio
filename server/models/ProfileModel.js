@@ -26,7 +26,7 @@ const profileSchema = new Schema({
       type: String,
       required: false
     },
-    cityState: {
+    location: {
       type: String,
       required: false
     },

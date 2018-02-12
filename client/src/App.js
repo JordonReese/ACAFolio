@@ -13,7 +13,14 @@ class App extends Component {
     this.state = {
       signUpSignInError: "",
       authenticated: localStorage.getItem("token") || false,
-      userEmail:localStorage.getItem("email") || false
+      email:localStorage.getItem("email") || false,
+      userHandle: localStorage.getItem("userHandle")||"",
+      firstName: localStorage.getItem("firstName")||"",
+      lastName: localStorage.getItem("lastName")||"",
+      birthday: localStorage.getItem("birthday")||"",
+      location: localStorage.getItem("location")||"",
+      bio: localStorage.getItem("bio")||""
+
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
@@ -62,6 +69,12 @@ class App extends Component {
         const { token } = data;
         localStorage.setItem("token", token);
         localStorage.setItem("email", username);
+        localStorage.setItem("userHandle", profile.userHandle);
+        localStorage.setItem("firstName", profile.firstName);
+        localStorage.setItem("lastName", profile.lastName);
+        localStorage.setItem("birthday", "");
+        localStorage.setItem("location", "Austin, TX");
+        localStorage.setItem("bio", "");
         this.setState({
           signUpSignInError: "",
           authenticated: token,
@@ -77,8 +90,8 @@ class App extends Component {
       })
         .then(()=> {
           // getProfileByEmail sets currentProfile in application state
-          this.props.getProfileByEmail(username)
-          .then((profile)=> {console.log("in .then", profile);});
+          this.props.getProfileByEmail(username);
+          // .then((profile)=> {console.log("in .then", profile);});
       }).then(()=> {
         console.log("handleSignUp", this.props.currentProfile);
         // localStorage.setItem("profile", this.props.currentProfile);
@@ -119,7 +132,12 @@ class App extends Component {
           this.props.getProfileByEmail(username);
       }).then(()=> {
         console.log("currentProfile", this.props.currentProfile);
-        localStorage.setItem("profile", this.props.currentProfile);
+        localStorage.setItem("userHandle", this.props.currentProfile.userHandle);
+        localStorage.setItem("firstName", this.props.currentProfile.firstName);
+        localStorage.setItem("lastName", this.props.currentProfile.lastName);
+        localStorage.setItem("birthday", "");
+        localStorage.setItem("location", "Austin, TX");
+        localStorage.setItem("bio", "");
       });
     }
   }
