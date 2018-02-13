@@ -12,7 +12,8 @@ class SignUp extends Component {
       username: "",
       password: "",
       confirmPassword: "",
-      userHandle:""
+      userHandle:"",
+      location: ""
     };
   }
 
@@ -23,14 +24,15 @@ class SignUp extends Component {
       password: this.state.password,
       confirmPassword: this.state.confirmPassword
     }, {
-      userId: this.state.userID,
+      userId: this.state.userID||"",
       userHandle: this.state.userHandle,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.username,
       birthday: "",
-      cityState: "",
+      location: this.state.location,
       bio: "",
+      photo: this.state.photo,
       notifications: []
     }
   );
@@ -45,7 +47,7 @@ class SignUp extends Component {
             type="text"
             name="firstName"
             onChange={e => {
-              this.setState({firstName: e.target.value, userHandle:"@"+e.target.value+this.state.lastName[0]});
+              this.setState({firstName: e.target.value, userHandle:"@"+e.target.value.toLowerCase()+this.state.lastName[0].toLowerCase()});
               //this.setState({userHandle: e.target.value});
             }}
             placeholder="Enter first name"
@@ -59,7 +61,7 @@ class SignUp extends Component {
             type="text"
             name="lastName"
             onChange={e => {
-              this.setState({lastName: e.target.value, userHandle: "@"+this.state.firstName+e.target.value[0].toUpperCase()});
+              this.setState({lastName: e.target.value, userHandle: "@"+this.state.firstName.toLowerCase()+e.target.value[0].toLowerCase()});
             }}
             placeholder="Enter last name"
             value={this.state.lastName}
@@ -102,6 +104,32 @@ class SignUp extends Component {
             }}
             placeholder="Confirm Password"
             value={this.state.confirmPassword}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <ControlLabel>Location</ControlLabel>
+          <FormControl
+            type="text"
+            name="location"
+            onChange={e => {
+              this.setState({location: e.target.value});
+            }}
+            placeholder="Enter Location"
+            value={this.state.location}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <ControlLabel>Photo</ControlLabel>
+          <FormControl
+            type="text"
+            name="photo"
+            onChange={e => {
+              this.setState({photo: e.target.value});
+            }}
+            placeholder="Paste Photo Link"
+            value={this.state.photo}
           />
         </FormGroup>
 

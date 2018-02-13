@@ -450,3 +450,21 @@ video{
 .navDropDown {
   width:400px;
 }
+
+.navTitle {
+  color: wheat;
+  /* width: 100%; */
+}
+
+/*PROFILE SECTION*/
+.bold {
+  font-weight: bold;
+}
+
+.italics {
+  text-shadow: 10px;
+}
+
+.profileDetail {
+  font-family: 'Josefin Sans';
+}

@@ -12,6 +12,9 @@ const TopNavbar = (props) => {
                 <Nav pullLeft>
                   <Link to="/"><Navbar.Text>Home</Navbar.Text></Link>
                 </Nav>
+                <Nav>
+                  <h3 className = "navTitle">Austin Coding Academy Folio</h3>
+                </Nav>
                 <Nav pullRight>
                   <NotificationsContainer />
                 <Link to="/public"><Navbar.Text>My Profile</Navbar.Text></Link>

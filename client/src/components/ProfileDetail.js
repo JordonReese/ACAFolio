@@ -48,10 +48,16 @@ class ProfileDetail extends Component {
     const birthday = localStorage.getItem("birthday");
     const location = localStorage.getItem("location");
     const bio = localStorage.getItem("bio");
+    const photo = localStorage.getItem("photo");
 
     return (
-      <div>
-        {/* <div><h1>{this.props.currentProfile.firstName+"'s Profile"}</h1></div> */}
+      <div className="profileDetail">
+
+        <img src={photo} alt="a photo" height="250px"/>
+
+        <p className="italics">Give us your mug!</p>
+
+        <h1>{firstName+"'s Profile"}</h1>
 
         <div className="activityPost"><a href='#' className="activityName">User Handle:</a>
         <p className="commentMessage">{userHandle}</p></div>
@@ -92,3 +98,8 @@ export default ProfileDetail;
 // <div>{bio}</div>
 
         // {this.renderThis()}
+
+/* <div><h1>{this.props.currentProfile.firstName+"'s Profile"}</h1></div> */
+
+// <img src="https://a.wattpad.com/useravatar/DrakeFanfics.128.262725.jpg" alt="Drake" />
+// <img src="https://i.imgur.com/EdMMB83.jpg" alt="mug" height="300px"/>
