@@ -51,13 +51,28 @@ class ProfileDetail extends Component {
 
     return (
       <div>
-        <div>User Handle: {userHandle}</div>
-        <div>First Name: {firstName}</div>
-        <div>Last Name: {lastName}</div>
-        <div>Email: {email}</div>
-        <div>Birthday: {birthday}</div>
-        <div>Location: {location}</div>
-        <div>Bio: {bio}</div>
+        {/* <div><h1>{this.props.currentProfile.firstName+"'s Profile"}</h1></div> */}
+
+        <div className="activityPost"><a href='#' className="activityName">User Handle:</a>
+        <p className="commentMessage">{userHandle}</p></div>
+
+        <div className="activityPost"><a href='#' className="activityName">First Name:</a>
+        <p className="commentMessage">{firstName}</p></div>
+
+        <div className="activityPost"><a href='#' className="activityName">Last Name:</a>
+        <p className="commentMessage">{lastName}</p></div>
+
+        <div className="activityPost"><a href='#' className="activityName">Email:</a>
+        <p className="commentMessage">{email}</p></div>
+
+        <div className="activityPost"><a href='#' className="activityName">Birthday:</a>
+        <p className="commentMessage">{birthday}</p></div>
+
+        <div className="activityPost"><a href='#' className="activityName">Location:</a>
+        <p className="commentMessage">{location}</p></div>
+
+        <div className="activityPost"><a href='#' className="activityName">Bio:</a>
+      <p className="commentMessage">Canadian rapper, singer, songwriter, record producer, actor, and entrepreneur. Also dedicated Austin Coding Academy student since Jan 2018.{bio}</p></div>
     </div>
     );
 
