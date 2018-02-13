@@ -18,8 +18,14 @@ router.get("/activityfeed", _ActivityController.list);
 
 router.get("/activityfeed/:id", _ActivityController.show);
 
-router.delete("/activityfeed/:id", _ActivityController.remove);
+router.put("/activityfeed/:id", _ActivityController.update);
 
 router.post("/activityfeed", _ActivityController.create);
+
+// router.put("/activityfeed/:id", update);
+
+router.put("/updatecomments/:id", _ActivityController.updateComments);
+
+router.delete("/activityfeed/:id", _ActivityController.remove);
 
 exports.default = router;

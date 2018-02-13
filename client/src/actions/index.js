@@ -112,18 +112,18 @@ export function updateProfile(userId, profile) {
   }
 }
 
-export function updateNotifications(id, arrNotifications) {
-  // console.log("updateComments", actId, arrComments);
-  return function (dispatch) {
-    fetch(`/updateNotifications/${id}`, {
-      method: "PUT",
-      headers: {"Accept": "application/json",
-                "Content-Type": "application/json"},
-      body: JSON.stringify(arrNotifications)
-    }).then(() => console.log("Notifications Added"));
-
-  };
-}
+// export function updateNotifications(id, arrNotifications) {
+//   // console.log("updateComments", actId, arrComments);
+//   return function (dispatch) {
+//     fetch(`/updateNotifications/${id}`, {
+//       method: "PUT",
+//       headers: {"Accept": "application/json",
+//                 "Content-Type": "application/json"},
+//       body: JSON.stringify(arrNotifications)
+//     }).then(() => console.log("Notifications Added"));
+//
+//   };
+// }
 
 /* User Section */
 export function getUserByEmail(email) {

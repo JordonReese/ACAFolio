@@ -23,6 +23,7 @@ export const update = (request, response) => {
 
 // function to remove a notification
 export const remove = (request, response) => {
-  NotificationsModel.remove({[0]})
- return response.json({});
+ //  NotificationsModel.remove({[0]})
+ // return response.json({});
+ return;
 }

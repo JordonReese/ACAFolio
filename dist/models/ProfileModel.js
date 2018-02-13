@@ -8,45 +8,44 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Schema = _mongoose2.default.Schema;
 
-var userSchema = new Schema({
-  FirstName: {
+var profileSchema = new Schema({
+  userId: {
     type: String,
-    unique: true,
-    lowercase: true,
-    required: true
+    required: false
   },
-  LastName: {
+  userHandle: {
     type: String,
-    unique: true,
-    lowercase: true,
-    required: true
+    required: false
   },
-  Email: {
+  firstName: {
     type: String,
-    unique: true,
-    lowercase: true,
-    required: true
+    required: false
   },
-  Birthday: {
+  lastName: {
     type: String,
-    unique: true,
-    lowercase: true,
-    required: true
+    required: false
   },
-  UserName: {
+  email: {
     type: String,
-    unique: true,
-    lowercase: true,
-    required: true
+    required: false
   },
-  Password: {
+  birthday: {
     type: String,
-    required: true
+    required: false
   },
-  ACAID: {
+  location: {
     type: String,
-    required: true
+    required: false
+  },
+  bio: {
+    type: String,
+    required: false
+  },
+  notifications: {
+    type: Array,
+    required: false
   }
+
 });
 
-module.exports = _mongoose2.default.model("User", userSchema);
+module.exports = _mongoose2.default.model("profile", profileSchema);

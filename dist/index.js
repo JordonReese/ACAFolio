@@ -32,6 +32,18 @@ var _ActivityRoutes = require("./routes/ActivityRoutes.js");
 
 var _ActivityRoutes2 = _interopRequireDefault(_ActivityRoutes);
 
+var _ProfileRoutes = require("./routes/ProfileRoutes.js");
+
+var _ProfileRoutes2 = _interopRequireDefault(_ProfileRoutes);
+
+var _CommentRoutes = require("./routes/CommentRoutes.js");
+
+var _CommentRoutes2 = _interopRequireDefault(_CommentRoutes);
+
+var _UserRoutes = require("./routes/UserRoutes.js");
+
+var _UserRoutes2 = _interopRequireDefault(_UserRoutes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // dotenv allows us to declare environment variables in a .env file, \
@@ -60,6 +72,9 @@ app.use(authStrategy);
 app.use(_ListRoutes2.default);
 app.use(_ArticleRoutes2.default);
 app.use(_ActivityRoutes2.default);
+app.use(_CommentRoutes2.default);
+app.use(_ProfileRoutes2.default);
+app.use(_UserRoutes2.default);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

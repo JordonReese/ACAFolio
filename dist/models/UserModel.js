@@ -15,16 +15,11 @@ var userSchema = new Schema({
     lowercase: true,
     required: true
   },
-
   password: {
     type: String,
     required: true
-  },
-
-  Notifications: {
-    type: Array,
-    required: false
   }
+
 });
 
 module.exports = _mongoose2.default.model("User", userSchema);
