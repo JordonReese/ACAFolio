@@ -35,24 +35,48 @@ class PublicView extends Component {
 
   render() {
     // console.log("PublicView.render.currentProfile", this.props.currentProfile);
-
-    return (
-        <div>
-          <div className="container-fluid">
+    // this.props.loadProfile();
+        return (
+            <div>
+            <div className="container-fluid">
             <div className="row">
+            <div className="col-md-6">
 
-              <div className="col-md-6">
-                <ActivityFeedContainer />
+              <div><h1>{this.props.currentProfile.firstName+"'s Profile"}</h1></div>
+
+              <div className="activityPost"><a href='#' className="activityName">User ID</a>
+              <p className="commentMessage">{this.props.currentProfile._id}</p></div>
+
+              <div className="activityPost"><a href='#' className="activityName">Email</a>
+              <p className="commentMessage">{this.props.currentProfile.email}</p></div>
+
+              <div className="activityPost"><a href='#' className="activityName">First Name</a>
+              <p className="commentMessage">{this.props.currentProfile.firstName}</p></div>
+
+              <div className="activityPost"><a href='#' className="activityName">Last Name</a>
+              <p className="commentMessage">{this.props.currentProfile.lastName}</p></div>
+
+              <div className="activityPost"><a href='#' className="activityName">User Handle</a>
+            <p className="commentMessage">{this.props.currentProfile.userHandle}</p></div>
+              {/* <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-6"> */}
+                    <div>{this.props.date}</div>
+                  {/* <EditProfileContainer /> */}
+                    {/* <ActivityFeedContainer /> */}
+                  </div>
+                  {/* <div className="col-md-6">
+                    <ProfileDetailContainer />
+                  </div> */}
+                </div>
               </div>
               <div className="col-md-6">
                 <ProfileDetailContainer />
               </div>
             </div>
-          </div>
-         </div>
-    );
-  }
-}
+        );
+      }
+    }
 
 export default (PublicView);
 

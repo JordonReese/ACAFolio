@@ -8,7 +8,7 @@ export function loadProfile() {
     });
   };
 }
-export function profileLoaded(profiles) {
+function profileLoaded(profiles) {
   return {
     type: "PROFILES_LOADED",
     value: profiles
@@ -73,6 +73,7 @@ export function getProfileByUserHandle(userHandle){
      });
   };
 }
+
 export function getProfileByEmail(email) {
   return function (dispatch) {
     fetch(`/findByEmail/${email}`)
@@ -111,22 +112,21 @@ export function updateProfile(userId, profile) {
   }
 }
 
-export function updateNotifications(id, arrNotifications) {
-  // console.log("updateComments", actId, arrComments);
-  return function (dispatch) {
-    fetch(`/updateNotifications/${id}`, {
-      method: "PUT",
-      headers: {"Accept": "application/json",
-                "Content-Type": "application/json"},
-      body: JSON.stringify(arrNotifications)
-    }).then(() => console.log("Notifications Added"));
-
-  };
-}
+// export function updateNotifications(id, arrNotifications) {
+//   // console.log("updateComments", actId, arrComments);
+//   return function (dispatch) {
+//     fetch(`/updateNotifications/${id}`, {
+//       method: "PUT",
+//       headers: {"Accept": "application/json",
+//                 "Content-Type": "application/json"},
+//       body: JSON.stringify(arrNotifications)
+//     }).then(() => console.log("Notifications Added"));
+//
+//   };
+// }
 
 /* User Section */
 export function getUserByEmail(email) {
-
   return function (dispatch) {
     fetch(`/users/${email}`)
     .then( (response) => {
@@ -229,6 +229,18 @@ export function updateComments(actId, arrComments) {
 // export function loadNotifications() {
 //
 // }
+
+export function updateNotifications(id, arrNotifications) {
+  // console.log("updateComments", actId, arrComments);
+  return function (dispatch) {
+    fetch(`/updateNotifications/${id}`, {
+      method: "PUT",
+      headers: {"Accept": "application/json",
+                "Content-Type": "application/json"},
+      body: JSON.stringify(arrNotifications)
+    }).then(() => console.log("Notifications Added"));
+  };
+}
 
 export const updateNotification = (notifications) => {
   return {
