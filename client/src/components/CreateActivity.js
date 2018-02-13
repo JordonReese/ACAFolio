@@ -35,7 +35,10 @@ class CreateActivity extends Component {
     }  // if statement
   }  // componentDidMount
 
-  formatDate(date) {
+  // render() {
+  //   console.log("Render.props", this.props.currentProfile, this.state);
+
+  formatDate = (date)=> {
     var monthNames = [
       "January", "February", "March",
       "April", "May", "June", "July",
@@ -50,7 +53,7 @@ class CreateActivity extends Component {
     return day + ' ' + monthNames[monthIndex] + ' ' + year;
   }
 
-  handleNotifications(){
+  handleNotifications = () => {
     let stringSplit = this.state.post.split(" ");
     console.log(stringSplit);
     let handleTags = [];
@@ -78,6 +81,7 @@ class CreateActivity extends Component {
 
     }
   }
+
   render() {
     console.log("componentINrender",this.props.toUserProfile)
     // let handleNotifications = () =>{
