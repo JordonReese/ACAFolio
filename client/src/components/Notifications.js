@@ -8,16 +8,16 @@ import { NavDropdown, MenuItem } from "react-bootstrap";
 function Notifications(props) {
   let notifTitle = `Notifications (${props.notifications.length})`
   console.log(props.notifications)
-  let mapNotifications = props.notifications.map(notification => {
+  let mapNotifications = props.notifications.map((notification, id) => {
     return (
-          <MenuItem className="navDropDown" href="#">
+          <MenuItem key={id} className="navDropDown" href="#">
             <h6>From: {notification.fromUserHandle}</h6>
             <p>{notification.notification}</p>
             <MenuItem divider />
           </MenuItem>
       )
   })
-  
+
   console.log(mapNotifications)
 
 while(true){
@@ -31,4 +31,3 @@ while(true){
 }
 
 export default Notifications;
-
