@@ -42,32 +42,12 @@ class PublicView extends Component {
             <div className="row">
             <div className="col-md-6">
 
-              <div><h1>{this.props.currentProfile.firstName+"'s Profile"}</h1></div>
-
-              <div className="activityPost"><a href='#' className="activityName">User ID</a>
-              <p className="commentMessage">{this.props.currentProfile._id}</p></div>
-
-              <div className="activityPost"><a href='#' className="activityName">Email</a>
-              <p className="commentMessage">{this.props.currentProfile.email}</p></div>
-
-              <div className="activityPost"><a href='#' className="activityName">First Name</a>
-              <p className="commentMessage">{this.props.currentProfile.firstName}</p></div>
-
-              <div className="activityPost"><a href='#' className="activityName">Last Name</a>
-              <p className="commentMessage">{this.props.currentProfile.lastName}</p></div>
-
-              <div className="activityPost"><a href='#' className="activityName">User Handle</a>
-            <p className="commentMessage">{this.props.currentProfile.userHandle}</p></div>
-              {/* <div className="container-fluid">
-                <div className="row">
-                  <div className="col-md-6"> */}
+              <div>
+                <img src="https://a.wattpad.com/useravatar/DrakeFanfics.128.262725.jpg" alt="Drake" />
+                <h1>{this.props.currentProfile.firstName+"'s Profile"}</h1>
+              </div>
                     <div>{this.props.date}</div>
-                  {/* <EditProfileContainer /> */}
-                    {/* <ActivityFeedContainer /> */}
                   </div>
-                  {/* <div className="col-md-6">
-                    <ProfileDetailContainer />
-                  </div> */}
                 </div>
               </div>
               <div className="col-md-6">
