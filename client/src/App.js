@@ -13,14 +13,14 @@ class App extends Component {
     this.state = {
       signUpSignInError: "",
       authenticated: localStorage.getItem("token") || false,
-      email:localStorage.getItem("email") || false,
+      email: localStorage.getItem("email") || "",
       userHandle: localStorage.getItem("userHandle")||"",
       firstName: localStorage.getItem("firstName")||"",
       lastName: localStorage.getItem("lastName")||"",
       birthday: localStorage.getItem("birthday")||"",
       location: localStorage.getItem("location")||"",
-      bio: localStorage.getItem("bio")||""
-
+      bio: localStorage.getItem("bio")||"",
+      photo: localStorage.getItem("photo")||""
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("App.CDM.local storage email", this.state.userEmail);
+    console.log("App.CDM.local storage email", this.state.email);
     // if (localStorage.getItem("profile")) {
     //   this.props.getProfileDone(localStorage.getItem("profile"))
     // }
@@ -73,12 +73,20 @@ class App extends Component {
         localStorage.setItem("firstName", profile.firstName);
         localStorage.setItem("lastName", profile.lastName);
         localStorage.setItem("birthday", "");
-        localStorage.setItem("location", "Austin, TX");
+        localStorage.setItem("location", profile.location);
+        localStorage.setItem("photo", profile.photo);
         localStorage.setItem("bio", "");
         this.setState({
           signUpSignInError: "",
           authenticated: token,
-          userEmail: username
+          email: username,
+          userHandle: profile.userHandle,
+          firstName: profile.firstName,
+          lastName: profile.lastName,
+          birthday: profile.birthday,
+          location: profile.location,
+          bio: profile.bio,
+          photo: profile.photo
         });
       })
         .then(()=> {
@@ -125,7 +133,7 @@ class App extends Component {
         this.setState({
           signUpSignInError: "",
           authenticated: token,
-          userEmail: username
+          email: username
         });
       }).then(()=> {
           // getProfileByEmail sets currentProfile in application state
@@ -136,15 +144,33 @@ class App extends Component {
         localStorage.setItem("firstName", this.props.currentProfile.firstName);
         localStorage.setItem("lastName", this.props.currentProfile.lastName);
         localStorage.setItem("birthday", "");
-        localStorage.setItem("location", "Austin, TX");
+        localStorage.setItem("location", this.props.currentProfile.location);
+        localStorage.setItem("photo", this.props.currentProfile.photo);
         localStorage.setItem("bio", "");
+        this.setState({
+          userHandle: this.props.currentProfile.userHandle,
+          firstName: this.props.currentProfile.firstName,
+          lastName: this.props.currentProfile.lastName,
+          birthday: this.props.currentProfile.birthday,
+          location: this.props.currentProfile.location,
+          bio: this.props.currentProfile.bio,
+          photo: this.props.currentProfile.photo
+        });
+
       });
     }
   }
 
   handleSignOut() {
     localStorage.removeItem("token");
-    localStorage.removeItem("profile");
+    localStorage.removeItem("email");
+    localStorage.removeItem("userHandle");
+    localStorage.removeItem("firstName");
+    localStorage.removeItem("lastName");
+    localStorage.removeItem("birthday");
+    localStorage.removeItem("location");
+    localStorage.removeItem("bio");
+    localStorage.removeItem("photo");
     this.setState({
       authenticated: false
     });

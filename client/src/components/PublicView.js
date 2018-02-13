@@ -36,27 +36,23 @@ class PublicView extends Component {
   render() {
     // console.log("PublicView.render.currentProfile", this.props.currentProfile);
     // this.props.loadProfile();
-        return (
-            <div>
-            <div className="container-fluid">
-            <div className="row">
-            <div className="col-md-6">
+      return (
+        <div className="container-fluid">
+          <div className="row">
 
-              <div>
-                <img src="https://a.wattpad.com/useravatar/DrakeFanfics.128.262725.jpg" alt="Drake" />
-                <h1>{this.props.currentProfile.firstName+"'s Profile"}</h1>
-              </div>
-                    <div>{this.props.date}</div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <ProfileDetailContainer />
-              </div>
+            <div className="col-md-6">
+              <ActivityFeedContainer />
             </div>
-        );
-      }
-    }
+
+            <div className="col-md-6">
+              <ProfileDetailContainer />
+            </div>
+
+          </div>
+        </div>
+      );
+  }  // render
+}  // PublicView
 
 export default (PublicView);
 
@@ -68,3 +64,18 @@ export default (PublicView);
 // <div>{this.props.currentProfile.userHandle}</div>
 
 // <div>{this.props.date}</div>
+
+// <div className="container-fluid">
+//   <div className="row">
+//
+//     <div className="col-md-6">
+//       <img src="https://a.wattpad.com/useravatar/DrakeFanfics.128.262725.jpg" alt="Drake" />
+//       <h1>{this.props.currentProfile.firstName+"'s Profile"}</h1>
+//     </div>
+//
+//     <div className="col-md-6">
+//       <ProfileDetailContainer />
+//     </div>
+//
+//   </div>
+// </div>
