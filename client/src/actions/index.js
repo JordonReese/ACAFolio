@@ -109,6 +109,8 @@ export function updateProfile(userId, profile) {
                 "Content-Type": "application/json"},
       body: JSON.stringify(profile)
     }).then(() => dispatch(loadProfile()));
+  };
+}
 
 export function updateNotifications(id, arrNotifications) {
   // console.log("updateComments", actId, arrComments);
@@ -228,17 +230,17 @@ export function updateComments(actId, arrComments) {
 //
 // }
 
-export function updateNotifications(id, arrNotifications) {
-  // console.log("updateComments", actId, arrComments);
-  return function (dispatch) {
-    fetch(`/updateNotifications/${id}`, {
-      method: "PUT",
-      headers: {"Accept": "application/json",
-                "Content-Type": "application/json"},
-      body: JSON.stringify(arrNotifications)
-    }).then(() => console.log("Notifications Added"));
-  };
-}
+// export function updateNotifications(id, arrNotifications) {
+//   // console.log("updateComments", actId, arrComments);
+//   return function (dispatch) {
+//     fetch(`/updateNotifications/${id}`, {
+//       method: "PUT",
+//       headers: {"Accept": "application/json",
+//                 "Content-Type": "application/json"},
+//       body: JSON.stringify(arrNotifications)
+//     }).then(() => console.log("Notifications Added"));
+//   };
+// }
 
 export const updateNotification = (notifications) => {
   return {
