@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.remove = exports.create = exports.show = exports.list = undefined;
+exports.remove = exports.updateComments = exports.update = exports.create = exports.show = exports.list = undefined;
 
 var _ActivityModel = require("../models/ActivityModel.js");
 
@@ -34,15 +34,26 @@ var create = exports.create = function create(request, response) {
   });
 };
 
-//Put Activity
-// export const update = (request, response) => {
-//   ActivityModel.findById(request.params.id)
-// }
+// Put Activity.  This will update the activity.
+var update = exports.update = function update(request, response) {
+  _ActivityModel2.default.update({ _id: request.params.id }, request.body, function (err, raw) {
+    if (err) return handleError(err);
+    console.log("raw response", raw);
+  });
+};
+
+// Put Activity.  This will update the activity.
+var updateComments = exports.updateComments = function updateComments(request, response) {
+  // const activity= new ActivityModel(request.body);
+  _ActivityModel2.default.update({ _id: request.params.id }, { comments: request.body }).then(function (result) {
+    return response.json(result);
+  });
+};
 
 //Delete Activity
 var remove = exports.remove = function remove(request, response) {
   console.log("ControllerFired", request.params.id);
   _ActivityModel2.default.remove({ _id: request.params.id }).then(function (activities) {
-    return response.json("Acticvity Deleted");
+    return response.json("Activity Deleted");
   });
 };

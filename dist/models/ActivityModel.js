@@ -15,6 +15,10 @@ var schema = new _mongoose2.default.Schema({
     type: String,
     required: false
   },
+  userHandle: {
+    type: String,
+    required: false
+  },
   post: {
     type: String,
     required: false
@@ -29,6 +33,10 @@ var schema = new _mongoose2.default.Schema({
   },
   likesCount: {
     type: String,
+    required: false
+  },
+  comments: {
+    type: Array,
     required: false
   }
 });

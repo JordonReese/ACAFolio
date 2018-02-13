@@ -13,7 +13,7 @@ const schema = new mongoose.Schema({
     type: Object,
     required: true
   },
-  {
+  homework: {
     homework: Object,
     required: true
   }
