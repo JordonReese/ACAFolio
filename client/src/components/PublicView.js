@@ -17,7 +17,6 @@ class PublicView extends Component {
 }
 
   componentDidMount() {
-    console.log("PublicView.CDM.currentProfile", this.props.currentProfile);
     this.timerID = setInterval(
       () => this.tick(),
       20000    // this is every 1 min.
@@ -35,8 +34,7 @@ class PublicView extends Component {
   }
 
   render() {
-    console.log("PublicView.render.currentProfile", this.props.currentProfile);
-
+    // console.log("PublicView.render.currentProfile", this.props.currentProfile);
     // this.props.loadProfile();
         return (
             <div>
@@ -72,11 +70,21 @@ class PublicView extends Component {
                   </div> */}
                 </div>
               </div>
-              {/* <div className="col-md-6">
+              <div className="col-md-6">
                 <ProfileDetailContainer />
-              </div> */}
+              </div>
             </div>
         );
       }
     }
+
 export default (PublicView);
+
+
+// <div>{this.props.currentProfile._id}</div>
+// <div>{this.props.currentProfile.email}</div>
+// <div>{this.props.currentProfile.firstName}</div>
+// <div>{this.props.currentProfile.lastName}</div>
+// <div>{this.props.currentProfile.userHandle}</div>
+
+// <div>{this.props.date}</div>

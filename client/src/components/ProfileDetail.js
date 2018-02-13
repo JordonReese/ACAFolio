@@ -1,32 +1,79 @@
-//Comparing to ActivityFeed.js
+/*
+Used to show detials on profile:
+FirstName, LastName, Birthday, profileName, Email, ACAID, Password
+*/
+import React, {Component} from "react";
+
+class ProfileDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+
+  componentDidMount = ()=> {
+    const myEmail = localStorage.getItem("email")
+    console.log("ProfileDetail.CDM.my email", myEmail);
+
+    // if (myEmail) {
+    //   this.props.getProfileByEmail(myEmail);
+    //   console.log("ProfileDetail.CDM.afterGetProfile call", myEmail, this.props.currentProfile);
+    // }  // if statement
+
+    const email = localStorage.getItem("email");
+    const userHandle = localStorage.getItem("userHandle");
+    const firstName = localStorage.getItem("firstName");
+    const lastName = localStorage.getItem("lastName");
+    const birthday = localStorage.getItem("birthday");
+    const location = localStorage.getItem("location");
+    const bio = localStorage.getItem("bio");
+  }  // componentDidMount
 
 
-import React, { Component } from "react";
-// import {Link} from "react-router-dom";
-// import PropTypes from "prop-types";
+// renderThis() {
+//   console.log("renderThis", this.props.currentProfile);
+//   return (
+//     <div>{this.props.currentProfile.userHandle}</div>
+//   );
+// }
 
-function ProfileDetail(props) {
+  render() {
 
-const profileDivs = props.profiles.map(function(profile){
-  return
-  <div>
-    <ul>
-    <ol>{this.props.profile.userHandle}</ol>
-    <ol>{this.props.profile.firstName}</ol>
-    <ol>{this.props.profile.lastName}</ol>
-    <ol>{this.props.profile.email}</ol>
-    <ol>{this.props.profile.birthday}</ol>
-    <ol>{this.props.profile.cityState}</ol>
-    <ol>{this.props.profile.bio}</ol>
-  </ul>
- {/* <Link to={"/users/" + user._id}>View</Link> */}
- {/* <button onClick={(e) => props.deleteUser(user._id)}>Delete</button> */}
-    </div>;
-});
-// return (
-// <div>
-//   {profileDivs}
-// </div>);
-}
+    console.log("ProfileDetail.render", this.props.currentProfile);
+    // const { userHandle, firstName, lastName, email, birthday, location, bio, notifications }  = this.props.currentProfile;
+
+    const email = localStorage.getItem("email");
+    const userHandle = localStorage.getItem("userHandle");
+    const firstName = localStorage.getItem("firstName");
+    const lastName = localStorage.getItem("lastName");
+    const birthday = localStorage.getItem("birthday");
+    const location = localStorage.getItem("location");
+    const bio = localStorage.getItem("bio");
+
+    return (
+      <div>
+        <div>User Handle: {userHandle}</div>
+        <div>First Name: {firstName}</div>
+        <div>Last Name: {lastName}</div>
+        <div>Email: {email}</div>
+        <div>Birthday: {birthday}</div>
+        <div>Location: {location}</div>
+        <div>Bio: {bio}</div>
+    </div>
+    );
+
+  }  // for render
+
+}  // closure for the class
 
 export default ProfileDetail;
+
+
+// <div>{userHandle}</div>
+// <div>{firstName}</div>
+// <div>{lastName}</div>
+// <div>{email}</div>
+// <div>{birthday}</div>
+// <div>{location}</div>
+// <div>{bio}</div>
+
+        // {this.renderThis()}

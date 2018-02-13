@@ -35,7 +35,6 @@ class CreateActivity extends Component {
     }  // if statement
   }  // componentDidMount
 
-
   // render() {
   //   console.log("Render.props", this.props.currentProfile, this.state);
 
