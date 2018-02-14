@@ -41,6 +41,10 @@ var profileSchema = new Schema({
     type: String,
     required: false
   },
+  photo: {
+    type: String,
+    required: false
+  },
   notifications: {
     type: Array,
     required: false
